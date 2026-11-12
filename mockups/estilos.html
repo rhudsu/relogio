@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estilos: bolha, relógio e nuvens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --r: 69; --night: #0a1230; --deep: #14305f; --sky: #9fd6f5; --mist: #e6f5ff; --ink-dark: #0f2748; --ink-light: #e8ebf5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #060918; color: var(--ink-light); font-family: "Newsreader", Georgia, serif; }
+
+    /* barra de controle do risco: mostra como cada estilo reage ao índice */
+    .bar { position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 10px 20px; background: rgba(6,9,24,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #2b356b; font-family: "Jost", sans-serif; }
+    .bar strong { font-size: 1rem; }
+    .bar label { display: flex; align-items: center; gap: 10px; color: #a9b2d4; font-size: .9375rem; }
+    .bar input[type=range] { width: min(320px, 60vw); }
+    .bar output { min-width: 2ch; color: #fff; font-weight: 600; }
+    .bar button { padding: 4px 12px; border: 1px solid #2b356b; border-radius: 999px; background: transparent; color: #e8ebf5; font: 500 .875rem "Jost", sans-serif; cursor: pointer; }
+    .bar button:hover { border-color: #8fb4cc; }
+    .intro { width: min(100% - 40px, 1040px); margin: 24px auto; font-family: "Jost", sans-serif; color: #a9b2d4; }
+    .intro h1 { margin: 0 0 6px; color: #e8ebf5; font-size: 1.5rem; }
+    .intro p { margin: 0; }
+
+    .opt { position: relative; overflow: hidden; min-height: 760px; margin: 0 0 40px; text-align: center; isolation: isolate; color: var(--ink-light); transition: color .3s; }
+    .opt.is-light { color: var(--ink-dark); }
+    .opt__tag { position: absolute; top: 14px; left: 20px; z-index: 6; padding: 4px 12px; border-radius: 999px; background: rgba(0,0,0,.5); color: #fff; font: 600 .8125rem "Jost", sans-serif; letter-spacing: .03em; }
+    .opt__body { position: relative; z-index: 3; padding: 64px 20px 36px; }
+    .opt__title { max-width: 18ch; margin: 0 auto 8px; font: 600 clamp(2rem, 1.2rem + 3.4vw, 3.25rem)/1.08 "Jost", sans-serif; letter-spacing: -.01em; }
+    .opt__lead { margin: 0 auto 6px; font-size: 1.1875rem; opacity: .85; }
+    .opt__read { display: inline-flex; gap: 14px; align-items: baseline; margin: 10px 0 0; padding: 8px 18px; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); font: 500 .9375rem "Jost", sans-serif; }
+    .opt__read b { font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .opt.is-light .opt__read { background: rgba(255,255,255,.55); border-color: rgba(15,39,72,.2); }
+    .slot svg { display: block; width: 100%; height: auto; }
+    .layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+
+    /* bolha genérica que sobe */
+    .bubble { position: absolute; bottom: -80px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 6%, rgba(255,255,255,.25) 22%, rgba(150,210,245,.10) 55%, rgba(255,255,255,.38) 100%);
+      border: 1px solid rgba(255,255,255,.5); box-shadow: inset 0 0 10px rgba(255,255,255,.25);
+      animation: rise var(--dur) linear var(--delay) infinite, sway var(--sway) ease-in-out var(--delay) infinite alternate; }
+    @keyframes rise { from { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 90% { opacity: 1; } to { transform: translateY(-900px); opacity: 0; } }
+    @keyframes sway { from { margin-left: -14px; } to { margin-left: 14px; } }
+    .is-light .bubble { border-color: rgba(40,120,190,.45); background: radial-gradient(circle at 30% 28%, #fff 0 8%, rgba(255,255,255,.4) 30%, rgba(90,170,225,.12) 62%, rgba(60,140,205,.4) 100%); }
+
+    /* 1. Relógio de bolhas */
+    .o1 { background: radial-gradient(ellipse 80% 60% at 50% 55%, color-mix(in srgb, #1d4f86 calc(100% - var(--r) * 1%), #bfe6fb), color-mix(in srgb, var(--night) calc(100% - var(--r) * 1%), #7cc3ee)); }
+    .o1 .slot { width: min(100%, 520px); margin: 18px auto 0; }
+    .o1 .hb { animation: bob 4s ease-in-out infinite alternate; }
+    @keyframes bob { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+
+    /* 2. Nuvens: quanto maior o risco, mais o céu fica claro e encoberto */
+    .o2 { background: linear-gradient(180deg, color-mix(in srgb, #0a1230 calc(100% - var(--r) * 1%), #bfe4fb) 0%, color-mix(in srgb, #1b3f78 calc(100% - var(--r) * 1%), #eaf7ff) 100%); }
+    .o2 .slot { width: min(100%, 440px); margin: 24px auto 0; filter: drop-shadow(0 18px 24px rgba(5,20,60,.4)); }
+    .cloud { position: absolute; left: -30%; filter: blur(5px); opacity: calc(.12 + var(--r) * .0088); animation: drift var(--dur) linear var(--delay) infinite; }
+    .cloud span { position: absolute; border-radius: 50%; background: #fff; }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(170vw); } }
+    .o2 .front { z-index: 4; }
+
+    /* 3. Bolha de sabão: cresce, afina e vibra mais com o risco */
+    .o3 { background: radial-gradient(ellipse 70% 55% at 50% 52%, color-mix(in srgb, #2f6aa3 calc(100% - var(--r) * 1%), #cfeafb), color-mix(in srgb, #0a1230 calc(100% - var(--r) * 1%), #8ccbf1)); }
+    .soap { position: relative; width: min(100%, 560px); aspect-ratio: 1; margin: 20px auto 0; border-radius: 50%; display: grid; place-items: center;
+      transform: scale(calc(.74 + var(--r) * .0026)); animation: wob calc(7s - var(--r) * .055s) ease-in-out infinite alternate;
+      background: radial-gradient(circle at 28% 22%, rgba(255,255,255,.6) 0 5%, transparent 14%), radial-gradient(circle, rgba(170,225,255,.05) 55%, rgba(170,225,255,.22) 80%, rgba(255,255,255,.6) 100%);
+      box-shadow: inset 0 0 40px rgba(180,230,255,.35), 0 0 calc(30px + var(--r) * .6px) rgba(120,200,245,.4); }
+    .soap::before { content: ""; position: absolute; inset: 0; border-radius: 50%; mix-blend-mode: screen; opacity: calc(.2 + var(--r) * .006);
+      background: conic-gradient(from 20deg, rgba(255,120,200,.4), rgba(120,220,255,.45), rgba(170,255,190,.35), rgba(255,220,120,.35), rgba(255,120,200,.4));
+      -webkit-mask: radial-gradient(circle, transparent 66%, #000 78%, transparent 92%); mask: radial-gradient(circle, transparent 66%, #000 78%, transparent 92%); animation: spin 18s linear infinite; }
+    .soap::after { content: ""; position: absolute; top: 9%; left: 14%; width: 22%; height: 11%; border-radius: 50%; background: rgba(255,255,255,.6); filter: blur(2px); transform: rotate(-35deg); }
+    .soap .slot { width: 74%; }
+    @keyframes wob { 0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; } 100% { border-radius: 47% 53% 51% 49% / 52% 48% 53% 47%; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* 4. Mergulho: mais risco = mais luz da superfície e mais bolhas */
+    .o4 { background: linear-gradient(180deg, color-mix(in srgb, #1a5a96 calc(100% - var(--r) * 1%), #d8f2ff) 0%, color-mix(in srgb, #0b1d4a calc(100% - var(--r) * 1%), #4a9bd0) 100%); }
+    .o4 .slot { width: min(100%, 440px); margin: 24px auto 0; filter: drop-shadow(0 18px 24px rgba(5,20,60,.45)); }
+    .rays { position: absolute; inset: -10% -10% 30% -10%; z-index: 0; opacity: calc(var(--r) * .009);
+      background: repeating-linear-gradient(105deg, rgba(255,255,255,.0) 0 40px, rgba(255,255,255,.35) 70px, rgba(255,255,255,0) 120px); filter: blur(14px); animation: shimmer 9s ease-in-out infinite alternate; }
+    @keyframes shimmer { from { transform: translateX(-30px); } to { transform: translateX(30px); } }
+
+    /* 5. Espuma: o nível sobe até transbordar, como bolhas prestes a estourar */
+    .o5 { background: linear-gradient(180deg, #f4fbff 0%, #cfeaf8 100%); color: var(--ink-dark); }
+    .o5 .slot { width: min(100%, 440px); margin: 24px auto 0; filter: drop-shadow(0 14px 20px rgba(20,60,110,.3)); }
+    .foam { position: absolute; left: -2%; right: -2%; bottom: 0; z-index: 4; height: calc(6% + var(--r) * .42%); transition: height .4s; }
+    .foam::before { content: ""; position: absolute; inset: 40% 0 0 0; background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(190,226,246,.95)); }
+    .foam i { position: absolute; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,.85) 40%, rgba(160,210,240,.75) 100%); border: 1px solid rgba(70,140,200,.35); }
+    .o5 .opt__read { background: rgba(255,255,255,.7); border-color: rgba(15,39,72,.2); }
+    .o5 .bubble { z-index: 1; }
+    @media (prefers-reduced-motion: reduce) { .bubble, .cloud, .soap, .soap::before, .rays, .o1 .hb { animation: none; } .bubble { bottom: auto; top: var(--stop); } .cloud { left: var(--cl); } }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <strong>Risco do índice</strong>
+    <label><input id="risk" type="range" min="0" max="100" value="69"> <output id="riskOut">69</output></label>
+    <button data-r="25" type="button">Baixo 25</button>
+    <button data-r="50" type="button">Elevado 50</button>
+    <button data-r="69" type="button">Hoje 69</button>
+    <button data-r="85" type="button">Crítico 85</button>
+    <button data-r="97" type="button">Quase meia-noite 97</button>
+  </div>
+
+  <header class="intro">
+    <h1>Cinco estilos: bolha, relógio, nuvens e azul-claro</h1>
+    <p>Mexa no controle acima: em todos os estilos o visual muda com o risco. Quanto mais perto do crítico, mais claro, cheio de bolhas ou encoberto. 1 Relógio de bolhas · 2 Nuvens · 3 Bolha de sabão · 4 Mergulho · 5 Espuma.</p>
+  </header>
+
+  <section class="opt o1" id="o1">
+    <span class="opt__tag">1 · Relógio de bolhas</span>
+    <div class="layer bubbles" data-rate="1"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="slot" id="bubbleClock"></div>
+      <p class="opt__read"><span>Faltam</span> <b data-time>4 min 37 s</b> <span data-risk></span></p>
+    </div>
+  </section>
+
+  <section class="opt o2" id="o2">
+    <span class="opt__tag">2 · Nuvens</span>
+    <div class="layer clouds"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="slot" data-realclock></div>
+      <p class="opt__read"><span>Faltam</span> <b data-time>4 min 37 s</b> <span data-risk></span></p>
+    </div>
+    <div class="layer clouds front"></div>
+  </section>
+
+  <section class="opt o3" id="o3">
+    <span class="opt__tag">3 · Bolha de sabão</span>
+    <div class="layer bubbles" data-rate="0.5"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="soap"><div class="slot" data-realclock></div></div>
+      <p class="opt__read"><span>Faltam</span> <b data-time>4 min 37 s</b> <span data-risk></span></p>
+    </div>
+  </section>
+
+  <section class="opt o4" id="o4">
+    <span class="opt__tag">4 · Mergulho</span>
+    <div class="rays"></div>
+    <div class="layer bubbles" data-rate="1.6"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="slot" data-realclock></div>
+      <p class="opt__read"><span>Faltam</span> <b data-time>4 min 37 s</b> <span data-risk></span></p>
+    </div>
+  </section>
+
+  <section class="opt o5" id="o5">
+    <span class="opt__tag">5 · Espuma</span>
+    <div class="layer bubbles" data-rate="0.7"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="slot" data-realclock></div>
+      <p class="opt__read"><span>Faltam</span> <b data-time>4 min 37 s</b> <span data-risk></span></p>
+    </div>
+    <div class="foam"></div>
+  </section>
+
+  <script>
+    const SVG = "http://www.w3.org/2000/svg";
+    const rand = (a, b) => a + Math.random() * (b - a);
+    const root = document.documentElement;
+    const slider = document.querySelector("#risk");
+
+    // segundos até a meia-noite pelo mesmo mapeamento do site: 900 * (1 - índice/100)
+    const secondsFor = (r) => Math.round(900 * (1 - r / 100));
+    const fmt = (s) => `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, "0")} s`;
+
+    function el(tag, attrs = {}, parent) {
+      const node = document.createElementNS(SVG, tag);
+      Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+      if (parent) parent.append(node);
+      return node;
+    }
+
+    // ---------- relógio feito de bolhas ----------
+    function buildBubbleClock(slot) {
+      const svg = el("svg", { viewBox: "0 0 520 520", role: "img", "aria-label": "Relógio formado por bolhas" });
+      const defs = el("defs", {}, svg);
+      const g1 = el("radialGradient", { id: "bb", cx: ".3", cy: ".28", r: ".85" }, defs);
+      [["0", "#fff", ".95"], [".2", "#fff", ".35"], [".6", "#9fd6f5", ".16"], ["1", "#fff", ".5"]].forEach(([o, c, a]) => el("stop", { offset: o, "stop-color": c, "stop-opacity": a }, g1));
+      const g2 = el("radialGradient", { id: "bf", cx: ".4", cy: ".35", r: ".8" }, defs);
+      [["0", "#fff", ".35"], ["1", "#9fd6f5", ".12"]].forEach(([o, c, a]) => el("stop", { offset: o, "stop-color": c, "stop-opacity": a }, g2));
+      const g3 = el("radialGradient", { id: "br", cx: ".3", cy: ".28", r: ".85" }, defs);
+      [["0", "#fff", ".9"], [".3", "#ff9a86", ".6"], ["1", "#d93b25", ".55"]].forEach(([o, c, a]) => el("stop", { offset: o, "stop-color": c, "stop-opacity": a }, g3));
+
+      const C = 260;
+      const at = (deg, d) => [C + Math.sin(deg * Math.PI / 180) * d, C - Math.cos(deg * Math.PI / 180) * d];
+      el("circle", { cx: C, cy: C, r: 246, fill: "url(#bf)", stroke: "rgba(255,255,255,.55)", "stroke-width": 2 }, svg);
+      el("ellipse", { cx: 150, cy: 100, rx: 52, ry: 22, fill: "rgba(255,255,255,.5)", transform: "rotate(-35 150 100)" }, svg);
+
+      for (let m = 0; m < 60; m += 1) {
+        if (m % 5 === 0) continue;
+        const [x, y] = at(m * 6, 214);
+        el("circle", { cx: x, cy: y, r: 3.4, fill: "url(#bb)", stroke: "rgba(255,255,255,.7)", "stroke-width": .8 }, svg);
+      }
+      for (let h = 0; h < 12; h += 1) {
+        const [x, y] = at(h * 30, 188);
+        const group = el("g", { class: "hb", style: `animation-delay:${-h * 0.33}s` }, svg);
+        el("circle", { cx: x, cy: y, r: 31, fill: h === 0 ? "url(#br)" : "url(#bb)", stroke: "rgba(255,255,255,.75)", "stroke-width": 1.4 }, group);
+        el("ellipse", { cx: x - 10, cy: y - 14, rx: 8, ry: 4, fill: "rgba(255,255,255,.7)", transform: `rotate(-35 ${x - 10} ${y - 14})` }, group);
+        const t = el("text", { x, y: y + 8, "text-anchor": "middle", "font-family": "Jost, sans-serif", "font-weight": 700, "font-size": 26, fill: "#10285a" }, group);
+        t.textContent = h === 0 ? 12 : h;
+      }
+
+      // 4:37 para a meia-noite = 11:55:23
+      const hands = [
+        { deg: 357.7, length: 104, n: 5, r0: 17, r1: 9 },
+        { deg: 332.3, length: 150, n: 7, r0: 14, r1: 7 },
+      ];
+      hands.forEach(({ deg, length, n, r0, r1 }) => {
+        for (let i = 1; i <= n; i += 1) {
+          const [x, y] = at(deg, (length / n) * i);
+          const r = r0 + ((r1 - r0) * (i - 1)) / (n - 1);
+          el("circle", { cx: x, cy: y, r, fill: "url(#bb)", stroke: "rgba(16,40,90,.55)", "stroke-width": 1.6 }, svg);
+        }
+      });
+      const [sx, sy] = at(138, 168);
+      el("line", { x1: C, y1: C, x2: sx, y2: sy, stroke: "#2f6f94", "stroke-width": 2, "stroke-linecap": "round" }, svg);
+      el("circle", { cx: sx, cy: sy, r: 8, fill: "url(#bb)", stroke: "#2f6f94", "stroke-width": 2 }, svg);
+      el("circle", { cx: C, cy: C, r: 13, fill: "url(#bb)", stroke: "rgba(16,40,90,.6)", "stroke-width": 2 }, svg);
+      slot.append(svg);
+    }
+
+    // ---------- relógio real da home nos outros estilos ----------
+    function setHands(svg) {
+      const angles = { hour: 357.7, minute: 332.3, second: 138 };
+      Object.entries(angles).forEach(([name, angle]) => svg.querySelector(`.hand--${name}`)?.setAttribute("transform", `rotate(${angle} 260 310)`));
+    }
+
+    // ---------- camadas animadas ----------
+    function fillBubbles(layer, risk) {
+      const rate = Number(layer.dataset.rate);
+      const count = Math.round((8 + risk * 0.34) * rate);
+      const speed = 1.5 - risk * 0.008;
+      layer.replaceChildren();
+      for (let i = 0; i < count; i += 1) {
+        const size = rand(10, 24 + risk * 0.45);
+        const b = document.createElement("span");
+        b.className = "bubble";
+        b.style.cssText = `left:${rand(0, 100)}%;width:${size}px;height:${size}px;--dur:${rand(9, 20) * speed}s;--delay:${-rand(0, 18)}s;--sway:${rand(2, 5)}s;--stop:${rand(0, 90)}%`;
+        layer.append(b);
+      }
+    }
+
+    function fillClouds(layer, index) {
+      layer.replaceChildren();
+      const front = layer.classList.contains("front");
+      const count = front ? 3 : 5;
+      for (let i = 0; i < count; i += 1) {
+        const w = rand(220, 420);
+        const cloud = document.createElement("div");
+        cloud.className = "cloud";
+        cloud.style.cssText = `top:${front ? rand(55, 80) : rand(2, 60)}%;width:${w}px;height:${w * .38}px;--dur:${rand(50, 110)}s;--delay:${-rand(0, 100)}s;--cl:${rand(0, 80)}%`;
+        for (let k = 0; k < 5; k += 1) {
+          const s = document.createElement("span");
+          const d = w * rand(.28, .5);
+          s.style.cssText = `left:${(k / 5) * (w - d)}px;bottom:0;width:${d}px;height:${d}px;transform:translateY(${rand(-18, 6)}px)`;
+          cloud.append(s);
+        }
+        layer.append(cloud);
+      }
+    }
+
+    function fillFoam() {
+      const foam = document.querySelector(".foam");
+      for (let i = 0; i < 90; i += 1) {
+        const d = rand(26, 70);
+        const bubble = document.createElement("i");
+        bubble.style.cssText = `left:${rand(-3, 100)}%;top:${rand(-6, 78)}%;width:${d}px;height:${d}px`;
+        foam.append(bubble);
+      }
+    }
+
+    function applyRisk(risk) {
+      root.style.setProperty("--r", risk);
+      document.querySelector("#riskOut").textContent = risk;
+      document.querySelectorAll(".opt:not(.o5)").forEach((s) => s.classList.toggle("is-light", risk >= 58));
+      document.querySelectorAll("[data-time]").forEach((n) => (n.textContent = fmt(secondsFor(risk))));
+      document.querySelectorAll("[data-risk]").forEach((n) => (n.textContent = `risco ${risk}`));
+      document.querySelectorAll(".bubbles").forEach((layer) => fillBubbles(layer, risk));
+    }
+
+    fetch("../index.html").then((r) => r.text()).then((html) => {
+      const svg = new DOMParser().parseFromString(html, "text/html").querySelector("#clock");
+      let n = 0;
+      document.querySelectorAll("[data-realclock]").forEach((slot) => {
+        const copy = svg.cloneNode(true);
+        n += 1;
+        copy.innerHTML = copy.innerHTML.replace(/id="([^"]+)"/g, `id="$1-${n}"`).replace(/url\(#([^)]+)\)/g, `url(#$1-${n})`);
+        copy.removeAttribute("id");
+        setHands(copy);
+        slot.append(copy);
+      });
+    });
+
+    buildBubbleClock(document.querySelector("#bubbleClock"));
+    document.querySelectorAll(".clouds").forEach((l) => fillClouds(l));
+    fillFoam();
+    applyRisk(69);
+
+    slider.addEventListener("input", () => applyRisk(Number(slider.value)));
+    document.querySelectorAll("[data-r]").forEach((btn) => btn.addEventListener("click", () => { slider.value = btn.dataset.r; applyRisk(Number(btn.dataset.r)); }));
+  </script>
+</body>
+</html>

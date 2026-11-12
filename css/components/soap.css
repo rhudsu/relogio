@@ -1,0 +1,215 @@
+/* Atmosfera do topo: o relógio dentro de uma bolha de sabão que cresce, afina e treme com o risco.
+   --r (0 a 100) é o índice de risco; definido pelo atmosphereView. */
+.hero {
+  --r: 50;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, transparent 82%, var(--noite-900) 100%),
+    radial-gradient(
+      ellipse 85% 60% at 50% 42%,
+      color-mix(in srgb, #1d4f86 calc(100% - var(--r) * 1%), #bfe6fb),
+      color-mix(in srgb, var(--noite-900) calc(100% - var(--r) * 1%), #7cc3ee)
+    );
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero.is-light .hero__title {
+  color: #0f2748;
+}
+
+.hero.is-light .hero__lead {
+  color: #2a5078;
+}
+
+.hero__bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ---------- a bolha que envolve o relógio ---------- */
+.soap {
+  --base: calc(0.8 + var(--r) * 0.0015); /* tamanho médio cresce com o risco */
+  --amp: calc(0.02 + var(--r) * 0.0008); /* quanto ela infla e murcha */
+  --breath: calc(9s - var(--r) * 0.07s); /* respira mais rápido perto do crítico */
+  --nerve: max(0px, calc((var(--r) - 55) * 0.075px)); /* tremor só aparece com risco alto */
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 580px);
+  aspect-ratio: 1;
+  margin: var(--espaco-2) auto var(--espaco-3);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 79% 83%, rgba(255, 255, 255, 0.32) 0 3%, transparent 8%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(170, 225, 255, 0.16) 76%, rgba(255, 255, 255, 0.5) 96%, rgba(255, 255, 255, 0.75) 100%);
+  box-shadow:
+    inset 0 0 34px rgba(190, 235, 255, 0.45),
+    inset 0 -26px 46px rgba(110, 185, 240, 0.28),
+    0 0 calc(30px + var(--r) * 0.55px) rgba(130, 205, 250, 0.4);
+  animation:
+    soap-breathe var(--breath) ease-in-out infinite,
+    soap-morph calc(var(--breath) * 0.8) ease-in-out infinite alternate,
+    soap-nerve 0.17s steps(2, end) infinite;
+}
+
+.soap .clock {
+  width: 72%;
+  margin: 0;
+}
+
+/* película iridescente: dois anéis girando em sentidos opostos */
+.soap::before,
+.soap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.soap::before {
+  opacity: calc(0.45 + var(--r) * 0.005);
+  background: conic-gradient(from 20deg, rgba(255, 120, 200, 0.45), rgba(120, 220, 255, 0.5), rgba(170, 255, 190, 0.4), rgba(255, 220, 120, 0.4), rgba(255, 120, 200, 0.45));
+  -webkit-mask: radial-gradient(circle, transparent 64%, #000 80%, transparent 93%);
+  mask: radial-gradient(circle, transparent 64%, #000 80%, transparent 93%);
+  animation: soap-spin 22s linear infinite;
+}
+
+.soap::after {
+  inset: 3%;
+  opacity: calc(0.25 + var(--r) * 0.004);
+  background: conic-gradient(from 200deg, rgba(120, 180, 255, 0.5), rgba(255, 170, 220, 0.45), rgba(150, 255, 230, 0.4), rgba(120, 180, 255, 0.5));
+  -webkit-mask: radial-gradient(circle, transparent 72%, #000 86%, transparent 96%);
+  mask: radial-gradient(circle, transparent 72%, #000 86%, transparent 96%);
+  filter: blur(2px);
+  animation: soap-spin 31s linear infinite reverse;
+}
+
+.soap__glint {
+  position: absolute;
+  z-index: 3;
+  top: 8%;
+  left: 13%;
+  width: 24%;
+  height: 11%;
+  border-radius: 50%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.15));
+  filter: blur(1.5px);
+  transform: rotate(-36deg);
+  pointer-events: none;
+}
+
+.soap__glint--small {
+  top: 20%;
+  left: 8%;
+  width: 6%;
+  height: 3.2%;
+  opacity: 0.8;
+}
+
+@keyframes soap-breathe {
+  0%,
+  100% {
+    transform: scale(calc(var(--base) - var(--amp)));
+  }
+  50% {
+    transform: scale(calc(var(--base) + var(--amp)));
+  }
+}
+
+@keyframes soap-morph {
+  from {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  to {
+    border-radius: 47% 53% 51% 49% / 53% 47% 54% 46%;
+  }
+}
+
+@keyframes soap-nerve {
+  0% {
+    translate: var(--nerve) 0;
+  }
+  100% {
+    translate: calc(var(--nerve) * -1) calc(var(--nerve) * 0.6);
+  }
+}
+
+@keyframes soap-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- bolhas que sobem (poucas) ---------- */
+.rising {
+  position: absolute;
+  bottom: -60px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 26%, #fff 0 7%, rgba(255, 255, 255, 0.3) 24%, transparent 46%),
+    radial-gradient(circle, rgba(150, 210, 245, 0.08) 55%, rgba(255, 255, 255, 0.4) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 0 8px rgba(190, 235, 255, 0.5), 0 0 6px rgba(150, 210, 245, 0.25);
+  animation:
+    rising-up var(--dur) linear var(--delay) infinite,
+    rising-sway var(--sway) ease-in-out var(--delay) infinite alternate;
+}
+
+.hero.is-light .rising {
+  border-color: rgba(40, 120, 190, 0.5);
+}
+
+@keyframes rising-up {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-880px);
+    opacity: 0;
+  }
+}
+
+@keyframes rising-sway {
+  from {
+    margin-left: -16px;
+  }
+  to {
+    margin-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soap,
+  .soap::before,
+  .soap::after,
+  .rising {
+    animation: none;
+  }
+
+  .soap {
+    transform: scale(var(--base));
+  }
+
+  .rising {
+    bottom: auto;
+    top: var(--stop);
+  }
+}

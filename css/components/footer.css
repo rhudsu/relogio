@@ -1,0 +1,16 @@
+.footer {
+  padding-block: var(--espaco-4);
+  border-top: 1px solid var(--linha);
+  color: var(--texto-suave);
+  font-family: var(--fonte-interface);
+  font-size: 0.9375rem;
+}
+
+.footer a {
+  color: var(--esmalte);
+  text-underline-offset: 3px;
+}
+
+.footer p {
+  margin: 0;
+}

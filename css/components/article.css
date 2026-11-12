@@ -1,0 +1,123 @@
+.article {
+  padding-block: var(--espaco-4) var(--espaco-5);
+}
+
+.article__title {
+  max-width: 22ch;
+  margin: 0 0 var(--espaco-2);
+  font-family: var(--fonte-interface);
+  font-size: clamp(2rem, 1.2rem + 3vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.article__lead {
+  max-width: 60ch;
+  margin: 0 0 var(--espaco-4);
+  color: var(--texto-suave);
+  font-size: 1.1875rem;
+}
+
+.article__heading {
+  margin: var(--espaco-5) 0 var(--espaco-2);
+  font-family: var(--fonte-interface);
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.article__subheading {
+  margin: var(--espaco-4) 0 var(--espaco-1);
+  font-family: var(--fonte-interface);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.article p,
+.article li {
+  max-width: 70ch;
+}
+
+.article a {
+  color: var(--esmalte);
+  text-underline-offset: 3px;
+}
+
+.article__list {
+  display: grid;
+  gap: var(--espaco-1);
+  padding-left: var(--espaco-3);
+}
+
+.article__callout {
+  max-width: 70ch;
+  margin: var(--espaco-3) 0;
+  padding: var(--espaco-2) var(--espaco-3);
+  border-left: 3px solid var(--esmalte);
+  background: var(--noite-800);
+}
+
+.article__callout--warning {
+  border-left-color: var(--ambar);
+}
+
+.article__callout p {
+  margin: 0;
+}
+
+.article__callout p + p {
+  margin-top: var(--espaco-1);
+}
+
+.table-wrap {
+  margin: var(--espaco-3) 0;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.table th,
+.table td {
+  padding: var(--espaco-1) var(--espaco-2);
+  border-bottom: 1px solid var(--linha);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table thead th {
+  color: var(--texto-suave);
+  font-family: var(--fonte-interface);
+  font-weight: 500;
+}
+
+.table tbody th {
+  font-family: var(--fonte-interface);
+  font-weight: 600;
+}
+
+.table__number {
+  font-family: var(--fonte-interface);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.references {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: var(--espaco-2) 0 var(--espaco-3);
+  padding-left: var(--espaco-3);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.references__tag {
+  color: var(--texto-suave);
+  font-family: var(--fonte-interface);
+  font-size: 0.8125rem;
+}

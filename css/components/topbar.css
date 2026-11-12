@@ -1,0 +1,33 @@
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+  width: min(100% - 40px, 1040px);
+  margin-inline: auto;
+  padding-block: var(--espaco-2);
+  font-family: var(--fonte-interface);
+}
+
+.topbar__brand {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: var(--espaco-3);
+}
+
+.topbar__nav a {
+  color: var(--texto-suave);
+  text-decoration: none;
+}
+
+.topbar__nav a:hover {
+  color: var(--texto);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

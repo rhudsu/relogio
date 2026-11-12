@@ -1,0 +1,90 @@
+.clock {
+  display: block;
+  width: min(100%, 480px);
+  height: auto;
+  margin: var(--espaco-3) auto var(--espaco-4);
+  overflow: visible;
+}
+
+.clock .hand {
+  visibility: hidden;
+  transform-origin: 260px 310px;
+  transform: rotate(var(--angle));
+}
+
+.clock--ready .hand {
+  visibility: visible;
+  animation: clock-sweep 2.6s cubic-bezier(0.22, 0.8, 0.24, 1) both;
+}
+
+.clock--ready .hand--hour {
+  animation-duration: 2.2s;
+}
+
+.clock--ready .hand--second {
+  animation-duration: 3s;
+}
+
+.clock--ready .clock__hammer {
+  transform-origin: 260px 112px;
+  animation: clock-tremble 0.09s linear 2.6s 14 alternate;
+}
+
+.clock--ready .clock__bells {
+  animation: clock-shake 0.09s linear 2.6s 14 alternate;
+}
+
+.clock__rings {
+  opacity: 0;
+}
+
+.clock--ready .clock__rings {
+  animation: clock-rings 1.3s ease-in-out 2.6s both;
+}
+
+@keyframes clock-sweep {
+  from {
+    transform: rotate(var(--from));
+  }
+  to {
+    transform: rotate(var(--angle));
+  }
+}
+
+@keyframes clock-tremble {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes clock-shake {
+  from {
+    transform: translateX(-1.2px);
+  }
+  to {
+    transform: translateX(1.2px);
+  }
+}
+
+@keyframes clock-rings {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clock--ready .hand,
+  .clock--ready .clock__hammer,
+  .clock--ready .clock__bells,
+  .clock--ready .clock__rings {
+    animation: none;
+  }
+}

@@ -1,0 +1,144 @@
+.phase {
+  --phase-cor: var(--ambar);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fonte-interface);
+}
+
+.phase[hidden] {
+  display: none;
+}
+
+.phase[data-phase="none"],
+.phase[data-phase="tension"] {
+  --phase-cor: var(--afasta);
+}
+
+.phase[data-phase="bear"],
+.phase[data-phase="crash"] {
+  --phase-cor: var(--alarme);
+}
+
+.phase__title {
+  margin: 0 0 var(--espaco-1);
+  color: var(--texto-suave);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.phase__headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-1) var(--espaco-2);
+  margin: 0;
+}
+
+.phase__number {
+  font-size: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.phase__chip {
+  padding: 2px 12px;
+  border: 1px solid var(--phase-cor);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--phase-cor) 14%, transparent);
+  color: var(--phase-cor);
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+.phase__sub {
+  margin: 4px 0 var(--espaco-2);
+  color: var(--texto-suave);
+  font-size: 0.9375rem;
+}
+
+.phase__scale {
+  margin-bottom: var(--espaco-2);
+}
+
+.phase__track {
+  height: 8px;
+  background: var(--noite-700);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.phase__fill {
+  display: block;
+  width: var(--width);
+  height: 100%;
+  border-radius: 999px;
+  background: var(--phase-cor);
+}
+
+.phase__marks {
+  position: relative;
+  height: 22px;
+  margin-top: 6px;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+}
+
+.phase__mark {
+  position: absolute;
+  left: var(--position);
+  transform: translateX(-100%);
+  white-space: nowrap;
+}
+
+.phase__mark::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 1px;
+  height: 6px;
+  background: var(--texto-suave);
+}
+
+/* O cartão acompanha a altura do resumo ao lado: as linhas de fatos esticam para ocupar o espaço. */
+.phase__facts {
+  display: grid;
+  flex: 1;
+  grid-auto-rows: minmax(2.25rem, 1fr);
+  margin: 0;
+}
+
+.phase__fact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-2);
+  border-top: 1px solid var(--linha);
+  font-size: 0.9375rem;
+}
+
+.phase__fact-label {
+  color: var(--texto-suave);
+}
+
+.phase__fact-value {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.phase__history {
+  margin: 0;
+  padding-top: var(--espaco-2);
+  border-top: 1px solid var(--linha);
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .phase__mark:nth-child(2) {
+    display: none;
+  }
+}

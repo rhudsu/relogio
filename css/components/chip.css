@@ -1,0 +1,25 @@
+.chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--fonte-interface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chip--closer {
+  background: rgba(217, 59, 37, 0.16);
+  color: var(--alarme-texto);
+}
+
+.chip--farther {
+  background: rgba(124, 207, 192, 0.14);
+  color: var(--afasta);
+}
+
+.chip--neutral {
+  background: rgba(169, 178, 212, 0.12);
+  color: var(--texto-suave);
+}

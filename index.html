@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relógio da Salvação</title>
+  <meta name="description" content="Quanto falta para a bolha da IA estourar. Um índice diário calculado por IA a partir de notícias, balanços e geopolítica.">
+  <meta name="theme-color" content="#0b0f26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components/notice.css">
+  <link rel="stylesheet" href="css/components/topbar.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/clock.css">
+  <link rel="stylesheet" href="css/components/soap.css">
+  <link rel="stylesheet" href="css/components/readout.css">
+  <link rel="stylesheet" href="css/components/phase.css">
+  <link rel="stylesheet" href="css/components/week-summary.css">
+  <link rel="stylesheet" href="css/components/market.css">
+  <link rel="stylesheet" href="css/components/history.css">
+  <link rel="stylesheet" href="css/components/chip.css">
+  <link rel="stylesheet" href="css/components/section.css">
+  <link rel="stylesheet" href="css/components/gauge.css">
+  <link rel="stylesheet" href="css/components/filters.css">
+  <link rel="stylesheet" href="css/components/timeline.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <p class="notice" id="sample-notice" hidden>Dados de exemplo. Os números e as notícias abaixo são ilustrativos.</p>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="#topo">Relógio da Salvação</a>
+    <nav class="topbar__nav" aria-label="Seções">
+      <a href="#termometros">Termômetros</a>
+      <a href="#diario">Diário</a>
+      <a href="metodologia.html">Pesquisa</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero" id="hero" aria-labelledby="titulo">
+      <div class="hero__bubbles" id="bubbles" aria-hidden="true"></div>
+      <div class="container">
+        <h1 id="titulo" class="hero__title">Quanto falta para a bolha da IA estourar</h1>
+        <p class="hero__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+        <p class="hero__error" id="load-error" role="alert" hidden></p>
+        <noscript><p class="hero__error">Este site precisa de JavaScript para mostrar o relógio.</p></noscript>
+
+        <div class="soap" id="soap">
+        <span class="soap__glint" aria-hidden="true"></span>
+        <span class="soap__glint soap__glint--small" aria-hidden="true"></span>
+        <svg class="clock" id="clock" viewBox="0 30 520 500" role="img" aria-labelledby="clock-title clock-desc">
+          <title id="clock-title">Despertador marcando 11h53min51s</title>
+          <desc id="clock-desc">Faltam 6 minutos e 9 segundos para a meia-noite. O alarme está ajustado para as 12.</desc>
+          <defs>
+            <radialGradient id="esmalte" cx="32%" cy="24%" r="90%">
+              <stop offset="0" stop-color="#D4E7F3"/>
+              <stop offset="0.35" stop-color="#9CC0D8"/>
+              <stop offset="0.75" stop-color="#5A86A3"/>
+              <stop offset="1" stop-color="#3B627D"/>
+            </radialGradient>
+            <linearGradient id="cromo" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="0.22" stop-color="#9AA7B6"/>
+              <stop offset="0.45" stop-color="#F1F5F9"/>
+              <stop offset="0.72" stop-color="#6A7889"/>
+              <stop offset="1" stop-color="#C7D1DC"/>
+            </linearGradient>
+            <radialGradient id="domo" cx="34%" cy="70%" r="85%">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="0.4" stop-color="#C5CFDA"/>
+              <stop offset="0.8" stop-color="#7C8999"/>
+              <stop offset="1" stop-color="#566475"/>
+            </radialGradient>
+            <linearGradient id="brilho-borda" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+              <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+              <stop offset="1" stop-color="#0B0F26" stop-opacity="0.35"/>
+            </linearGradient>
+            <radialGradient id="mostrador" cx="50%" cy="40%" r="75%">
+              <stop offset="0" stop-color="#FBFCF8"/>
+              <stop offset="0.8" stop-color="#E7E9E1"/>
+              <stop offset="1" stop-color="#CDD1C8"/>
+            </radialGradient>
+            <radialGradient id="sombra-mostrador" cx="50%" cy="50%" r="50%">
+              <stop offset="0.82" stop-color="#1C2340" stop-opacity="0"/>
+              <stop offset="1" stop-color="#1C2340" stop-opacity="0.22"/>
+            </radialGradient>
+            <linearGradient id="vidro" x1="0" y1="0" x2="0.6" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.38"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="sombra-corpo" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity="0.5"/>
+            </filter>
+            <filter id="sombra-ponteiro" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="1.5" dy="3" stdDeviation="1.6" flood-color="#1C2340" flood-opacity="0.35"/>
+            </filter>
+            <clipPath id="quadrante-perigo">
+              <rect x="0" y="0" width="262" height="310"/>
+            </clipPath>
+            <clipPath id="recorte-mostrador">
+              <circle cx="260" cy="310" r="166"/>
+            </clipPath>
+          </defs>
+
+          <!-- sinos -->
+          <g class="clock__bells">
+            <g transform="translate(134 160) rotate(-40)">
+              <path d="M-66 0 A66 66 0 0 1 66 0 Z" fill="url(#domo)" stroke="#4E5B6C" stroke-width="2"/>
+              <path d="M-50 -8 A52 52 0 0 1 -22 -46" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+              <rect x="-68" y="-4" width="136" height="8" rx="4" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+              <rect x="-4" y="-76" width="8" height="12" rx="2" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.2"/>
+              <circle cx="0" cy="-78" r="7" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            </g>
+            <g transform="translate(386 160) rotate(40)">
+              <path d="M-66 0 A66 66 0 0 1 66 0 Z" fill="url(#domo)" stroke="#4E5B6C" stroke-width="2"/>
+              <path d="M-50 -8 A52 52 0 0 1 -22 -46" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+              <rect x="-68" y="-4" width="136" height="8" rx="4" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+              <rect x="-4" y="-76" width="8" height="12" rx="2" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.2"/>
+              <circle cx="0" cy="-78" r="7" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            </g>
+          </g>
+
+          <!-- vibração dos sinos (aparece só quando o alarme treme) -->
+          <g class="clock__rings" fill="none" stroke="#A9B2D4" stroke-width="3" stroke-linecap="round">
+            <g transform="translate(134 160) rotate(-40)">
+              <path d="M-32 -98 A103 103 0 0 1 32 -98"/>
+              <path d="M-40 -118 A125 125 0 0 1 40 -118" opacity="0.6"/>
+            </g>
+            <g transform="translate(386 160) rotate(40)">
+              <path d="M-32 -98 A103 103 0 0 1 32 -98"/>
+              <path d="M-40 -118 A125 125 0 0 1 40 -118" opacity="0.6"/>
+            </g>
+          </g>
+
+          <!-- martelo -->
+          <g class="clock__hammer">
+            <rect x="253" y="96" width="14" height="24" rx="3" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            <line x1="260" y1="112" x2="260" y2="70" stroke="#4E5B6C" stroke-width="5" stroke-linecap="round"/>
+            <line x1="204" y1="70" x2="316" y2="70" stroke="#4E5B6C" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="204" cy="70" r="10" fill="url(#domo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            <circle cx="316" cy="70" r="10" fill="url(#domo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          </g>
+
+          <!-- caixa em esmalte -->
+          <g filter="url(#sombra-corpo)">
+            <circle cx="260" cy="310" r="200" fill="url(#esmalte)" stroke="#2F5570" stroke-width="3"/>
+          </g>
+          <circle cx="260" cy="310" r="193" fill="none" stroke="url(#brilho-borda)" stroke-width="4"/>
+
+          <!-- aro cromado -->
+          <circle cx="260" cy="310" r="178" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          <circle cx="260" cy="310" r="169" fill="none" stroke="#56647A" stroke-width="3"/>
+
+          <!-- mostrador -->
+          <circle cx="260" cy="310" r="166" fill="url(#mostrador)"/>
+          <circle cx="260" cy="310" r="166" fill="url(#sombra-mostrador)"/>
+
+          <!-- marcações de minutos e horas -->
+          <g transform="rotate(-90 260 310)" fill="none" stroke="#1C2340">
+            <circle cx="260" cy="310" r="155" stroke-width="10" stroke-dasharray="1.6 14.736" stroke-dashoffset="0.8"/>
+            <circle cx="260" cy="310" r="151" stroke-width="18" stroke-dasharray="4.4 77.28" stroke-dashoffset="2.2"/>
+          </g>
+          <!-- último quarto de hora em vermelho -->
+          <g clip-path="url(#quadrante-perigo)">
+            <g transform="rotate(-90 260 310)" fill="none" stroke="#D93B25">
+              <circle cx="260" cy="310" r="155" stroke-width="10" stroke-dasharray="1.6 14.736" stroke-dashoffset="0.8"/>
+              <circle cx="260" cy="310" r="151" stroke-width="18" stroke-dasharray="4.4 77.28" stroke-dashoffset="2.2"/>
+            </g>
+          </g>
+
+          <!-- numerais -->
+          <g font-family="Jost, sans-serif" font-weight="700" font-size="27" fill="#1C2340" text-anchor="middle" dominant-baseline="central">
+            <text x="260" y="192" fill="#D93B25" font-size="31">12</text>
+            <text x="319" y="208">1</text>
+            <text x="362" y="251">2</text>
+            <text x="378" y="310">3</text>
+            <text x="362" y="369">4</text>
+            <text x="319" y="412">5</text>
+            <text x="260" y="428">6</text>
+            <text x="201" y="412">7</text>
+            <text x="158" y="369">8</text>
+            <text x="142" y="310">9</text>
+            <text x="158" y="251">10</text>
+            <text x="201" y="208">11</text>
+          </g>
+
+          <g font-family="Jost, sans-serif" fill="#1C2340" text-anchor="middle">
+            <text x="260" y="356" font-size="15" font-weight="600" letter-spacing="1.2">Bolha da IA</text>
+            <text x="260" y="376" font-size="11" font-weight="500" opacity="0.65">Relógio da Salvação</text>
+          </g>
+
+          <!-- ponteiros: 11h53min51s -->
+          <g filter="url(#sombra-ponteiro)">
+            <!-- alarme ajustado para a meia-noite -->
+            <g>
+              <path d="M-3.2 22 L-1.8 -98 L0 -108 L1.8 -98 L3.2 22 Z" transform="translate(260 310)" fill="#D93B25"/>
+              <circle cx="260" cy="205" r="5.5" fill="#D93B25"/>
+            </g>
+            <g class="hand hand--hour">
+              <g transform="translate(260 310)">
+                <path d="M0 -84 C9 -64 12 -46 7 -28 L5 20 L-5 20 L-7 -28 C-12 -46 -9 -64 0 -84 Z" fill="#1C2340"/>
+                <path d="M0 -70 C5.5 -57 7 -45 4 -31 L-4 -31 C-7 -45 -5.5 -57 0 -70 Z" fill="#E4EED2"/>
+              </g>
+            </g>
+            <g class="hand hand--minute">
+              <g transform="translate(260 310)">
+                <path d="M0 -142 L5.5 -122 L4.5 22 L-4.5 22 L-5.5 -122 Z" fill="#1C2340"/>
+                <rect x="-2" y="-114" width="4" height="100" rx="1.5" fill="#E4EED2"/>
+              </g>
+            </g>
+            <g class="hand hand--second">
+              <g transform="translate(260 310)">
+                <path d="M-1.4 34 L-0.9 -148 L0.9 -148 L1.4 34 Z" fill="#2F6F94"/>
+                <circle cx="0" cy="30" r="5.5" fill="#2F6F94"/>
+              </g>
+            </g>
+          </g>
+
+          <!-- tampa central -->
+          <circle cx="260" cy="310" r="10" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          <circle cx="260" cy="310" r="3.5" fill="#1C2340"/>
+
+          <!-- reflexo do vidro -->
+          <g clip-path="url(#recorte-mostrador)">
+            <path d="M94 250 C110 170 190 128 292 134 C230 160 170 200 144 300 C118 300 100 280 94 250 Z" fill="url(#vidro)"/>
+          </g>
+          <circle cx="260" cy="310" r="166" fill="none" stroke="#1C2340" stroke-opacity="0.25" stroke-width="1"/>
+        </svg>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="readout" id="readout" aria-live="polite"></dl>
+      </div>
+
+    </section>
+
+    <section class="section" id="termometros" aria-labelledby="termometros-titulo">
+      <div class="container">
+        <h2 id="termometros-titulo" class="section__title">O que está movendo o ponteiro</h2>
+        <p class="section__lead">Risco de 0 a 100 por termômetro; quanto maior, mais perto do estouro. <a href="metodologia.html">Ver a pesquisa</a></p>
+        <div class="movers">
+          <section class="history" id="history" aria-labelledby="history-title" hidden></section>
+          <ul class="gauges" id="gauges"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mercado" aria-labelledby="mercado-titulo">
+      <div class="container">
+        <h2 id="mercado-titulo" class="section__title">Mercado esta semana</h2>
+        <div class="market">
+          <section class="phase" id="phase" aria-labelledby="phase-title" hidden></section>
+          <section class="week-summary" id="week-summary" aria-labelledby="week-summary-title" hidden></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="diario" aria-labelledby="diario-titulo">
+      <div class="container">
+        <h2 id="diario-titulo" class="section__title">Diário da bolha</h2>
+        <p class="section__lead">Quanto cada notícia moveu o ponteiro.</p>
+
+        <div class="filters">
+          <div class="filters__group" role="group" aria-label="Filtrar notícias">
+            <button class="filters__btn" type="button" data-filter="all" aria-pressed="true">Todas</button>
+            <button class="filters__btn" type="button" data-filter="closer" aria-pressed="false">Aproximam</button>
+            <button class="filters__btn" type="button" data-filter="farther" aria-pressed="false">Afastam</button>
+          </div>
+          <div class="filters__group" role="group" aria-label="Ordenar notícias">
+            <button class="filters__btn" type="button" data-sort="recent" aria-pressed="true">Mais recentes</button>
+            <button class="filters__btn" type="button" data-sort="relevant" aria-pressed="false">Mais relevantes</button>
+          </div>
+        </div>
+
+        <ol class="timeline" id="timeline"></ol>
+        <button class="more-button" id="timeline-more" type="button" hidden>Ver mais</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Indicador simbólico feito por IA: estima risco, não a data, e não é recomendação de investimento. <a href="metodologia.html">Metodologia e referências</a></p>
+    </div>
+  </footer>
+</body>
+</html>

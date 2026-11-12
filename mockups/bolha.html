@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opções visuais: bolha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #060918; color: #e8ebf5; font-family: "Newsreader", Georgia, serif; }
+    .intro { width: min(100% - 40px, 1040px); margin: 32px auto 24px; font-family: "Jost", sans-serif; }
+    .intro h1 { margin: 0 0 6px; font-size: 1.5rem; }
+    .intro p { margin: 0; color: #a9b2d4; }
+
+    .opt { position: relative; overflow: hidden; margin: 0 0 56px; min-height: 720px; text-align: center; isolation: isolate; }
+    .opt__tag { position: absolute; top: 14px; left: 20px; z-index: 5; padding: 4px 12px; border-radius: 999px; background: rgba(0,0,0,.45); color: #fff; font: 600 .8125rem "Jost", sans-serif; letter-spacing: .04em; }
+    .opt__body { position: relative; z-index: 2; padding: 64px 20px 40px; }
+    .opt__title { max-width: 18ch; margin: 0 auto 8px; font: 600 clamp(2rem, 1.2rem + 3.4vw, 3.25rem)/1.08 "Jost", sans-serif; letter-spacing: -.01em; }
+    .opt__lead { margin: 0 auto 8px; font-size: 1.1875rem; }
+    .clock-slot svg { display: block; width: 100%; height: auto; }
+
+    .bubbles { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+    .bubble { position: absolute; bottom: -80px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 6%, rgba(255,255,255,.25) 22%, rgba(150,210,245,.10) 55%, rgba(255,255,255,.38) 100%);
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: inset 0 0 12px rgba(255,255,255,.25);
+      animation: rise var(--dur) linear var(--delay) infinite, sway var(--sway) ease-in-out var(--delay) infinite alternate; }
+    @keyframes rise { from { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 90% { opacity: 1; } to { transform: translateY(-860px); opacity: 0; } }
+    @keyframes sway { from { margin-left: -14px; } to { margin-left: 14px; } }
+
+    /* A: mergulho, azul-claro no alto, azul profundo embaixo */
+    .opt--a { background: linear-gradient(180deg, #8fd0f0 0%, #3e8fc4 30%, #1b4f86 62%, #0b1d4a 100%); }
+    .opt--a .opt__lead { color: #e4f4fd; }
+    .opt--a .clock-slot { width: min(100%, 440px); margin: 24px auto 0; filter: drop-shadow(0 18px 24px rgba(5,20,60,.45)); }
+    .opt--a::after { content: ""; position: absolute; inset: auto 0 0 0; height: 140px; z-index: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 100%, rgba(143,208,240,.25), transparent 70%); }
+
+    /* B: relógio dentro de uma bolha de sabão grande */
+    .opt--b { background: radial-gradient(ellipse 70% 55% at 50% 52%, #2f6aa3 0%, #14305f 55%, #0a1230 100%); }
+    .opt--b .opt__lead { color: #cfe6f6; }
+    .soap { position: relative; width: min(100%, 560px); aspect-ratio: 1; margin: 20px auto 0; border-radius: 50%;
+      display: grid; place-items: center;
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.55) 0 5%, transparent 14%),
+        radial-gradient(circle at 50% 50%, rgba(170,225,255,.06) 55%, rgba(170,225,255,.22) 80%, rgba(255,255,255,.55) 100%);
+      box-shadow: inset 0 0 40px rgba(180,230,255,.35), 0 0 60px rgba(120,200,245,.35); animation: float 6s ease-in-out infinite alternate; }
+    .soap::before { content: ""; position: absolute; inset: 0; border-radius: 50%; mix-blend-mode: screen; opacity: .5;
+      background: conic-gradient(from 20deg, rgba(255,120,200,.35), rgba(120,220,255,.4), rgba(170,255,190,.3), rgba(255,220,120,.3), rgba(255,120,200,.35));
+      -webkit-mask: radial-gradient(circle, transparent 66%, #000 78%, transparent 92%); mask: radial-gradient(circle, transparent 66%, #000 78%, transparent 92%); }
+    .soap::after { content: ""; position: absolute; top: 9%; left: 14%; width: 22%; height: 11%; border-radius: 50%; background: rgba(255,255,255,.55); filter: blur(2px); transform: rotate(-35deg); }
+    .soap .clock-slot { width: 74%; }
+    @keyframes float { from { transform: translateY(-6px); } to { transform: translateY(8px); } }
+
+    /* C: aquário claro, hero claro com transição para o escuro */
+    .opt--c { background: linear-gradient(180deg, #eaf7ff 0%, #bfe3f6 45%, #86c2e6 80%, #0b0f26 100%); color: #0f2748; }
+    .opt--c .opt__lead { color: #2a5078; }
+    .opt--c .clock-slot { width: min(100%, 440px); margin: 24px auto 0; filter: drop-shadow(0 16px 22px rgba(20,60,110,.35)); }
+    .opt--c .bubble { background: radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 8%, rgba(255,255,255,.35) 30%, rgba(90,170,225,.12) 62%, rgba(60,140,205,.45) 100%); border-color: rgba(40,120,190,.4); }
+
+    @media (prefers-reduced-motion: reduce) { .bubble, .soap { animation: none; } .bubble { bottom: auto; top: var(--static-top); opacity: .8; } }
+  </style>
+</head>
+<body>
+  <header class="intro">
+    <h1>Três direções para trazer a bolha e o azul-claro</h1>
+    <p>A: mergulho (gradiente claro para escuro) · B: relógio dentro de uma bolha de sabão · C: aquário claro. As bolhas sobem sozinhas.</p>
+  </header>
+
+  <section class="opt opt--a" data-bubbles="22">
+    <span class="opt__tag">Opção A · Mergulho</span>
+    <div class="bubbles"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="clock-slot"></div>
+    </div>
+  </section>
+
+  <section class="opt opt--b" data-bubbles="12">
+    <span class="opt__tag">Opção B · Relógio na bolha</span>
+    <div class="bubbles"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="soap"><div class="clock-slot"></div></div>
+    </div>
+  </section>
+
+  <section class="opt opt--c" data-bubbles="26">
+    <span class="opt__tag">Opção C · Aquário claro</span>
+    <div class="bubbles"></div>
+    <div class="opt__body">
+      <h2 class="opt__title">Quanto falta para a bolha da IA estourar</h2>
+      <p class="opt__lead">Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+      <div class="clock-slot"></div>
+    </div>
+  </section>
+
+  <script>
+    // reaproveita o relógio real da home em vez de duplicar o SVG
+    fetch("../index.html").then((r) => r.text()).then((html) => {
+      const svg = new DOMParser().parseFromString(html, "text/html").querySelector("#clock");
+      let n = 0;
+      document.querySelectorAll(".clock-slot").forEach((slot) => {
+        const copy = svg.cloneNode(true);
+        n += 1;
+        // ids únicos para os gradientes não colidirem entre as cópias
+        copy.innerHTML = copy.innerHTML.replace(/id="([^"]+)"/g, `id="$1-${n}"`).replace(/url\(#([^)]+)\)/g, `url(#$1-${n})`);
+        copy.removeAttribute("id");
+        slot.append(copy);
+      });
+    });
+
+    document.querySelectorAll("[data-bubbles]").forEach((section) => {
+      const layer = section.querySelector(".bubbles");
+      const count = Number(section.dataset.bubbles);
+      for (let i = 0; i < count; i += 1) {
+        const size = 10 + Math.random() * 46;
+        const bubble = document.createElement("span");
+        bubble.className = "bubble";
+        bubble.style.cssText = `left:${Math.random() * 100}%;width:${size}px;height:${size}px;--dur:${9 + Math.random() * 12}s;--delay:${-Math.random() * 18}s;--sway:${2 + Math.random() * 3}s;--static-top:${Math.random() * 90}%`;
+        layer.append(bubble);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+:root {
+  --noite-900: #0b0f26;
+  --noite-800: #121838;
+  --noite-700: #1b2350;
+  --linha: #2b356b;
+  --texto: #e8ebf5;
+  --texto-suave: #a9b2d4;
+  --esmalte: #8fb4cc;
+  --alarme: #d93b25;
+  --alarme-texto: #ff7a63;
+  --afasta: #7ccfc0;
+  --ambar: #f0b35a;
+  --foco: #ffd27a;
+
+  --fonte-interface: "Jost", "Segoe UI", sans-serif;
+  --fonte-texto: "Newsreader", Georgia, serif;
+
+  --espaco-1: 8px;
+  --espaco-2: 16px;
+  --espaco-3: 24px;
+  --espaco-4: 40px;
+  --espaco-5: 72px;
+}

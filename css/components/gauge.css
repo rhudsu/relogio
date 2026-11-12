@@ -1,0 +1,89 @@
+.movers {
+  display: grid;
+  gap: var(--espaco-3);
+}
+
+.gauges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 18px var(--espaco-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gauge {
+  font-family: var(--fonte-interface);
+}
+
+.gauge--high {
+  --gauge-cor: var(--alarme);
+}
+
+.gauge--mid {
+  --gauge-cor: var(--ambar);
+}
+
+.gauge--low {
+  --gauge-cor: var(--afasta);
+}
+
+.gauge__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--espaco-1);
+  margin-bottom: 6px;
+}
+
+.gauge__name {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.gauge__weight {
+  color: var(--texto-suave);
+  font-size: 0.8125rem;
+}
+
+.gauge__delta {
+  min-width: 2.2em;
+  text-align: right;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.gauge__delta--closer {
+  color: var(--alarme-texto);
+}
+
+.gauge__delta--farther {
+  color: var(--afasta);
+}
+
+.gauge__delta--flat {
+  color: var(--texto-suave);
+}
+
+.gauge__score {
+  min-width: 1.8em;
+  text-align: right;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gauge__bar {
+  height: 8px;
+  background: var(--noite-700);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.gauge__fill {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: 999px;
+  background: var(--gauge-cor);
+}
