@@ -90,3 +90,48 @@
   font-family: var(--fonte-interface);
   font-size: 0.875rem;
 }
+
+.history__boundary {
+  stroke: var(--texto-suave);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 5;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.history__boundary-label {
+  fill: var(--texto-suave);
+  font-family: var(--fonte-interface);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.history__dot--month {
+  stroke-width: 3;
+}
+
+/* Celular: desenho próprio, com letras e pontos maiores em relação à tela. */
+.history__chart--compact {
+  max-height: none;
+}
+
+.history__chart--compact .history__tick {
+  font-size: 13px;
+}
+
+.history__chart--compact .history__zone-label {
+  font-size: 12px;
+}
+
+.history__chart--compact .history__value {
+  font-size: 19px;
+}
+
+.history__chart--compact .history__line {
+  stroke-width: 3;
+}
+
+.history__chart--compact .history__boundary-label {
+  font-size: 11px;
+}
