@@ -14,7 +14,8 @@
     "pipeline:export": "node --env-file-if-exists=.env pipeline/index.js --export-candidates",
     "pipeline:reclassify": "node --env-file-if-exists=.env pipeline/index.js --export-candidates --reclassify",
     "pipeline:apply": "node --env-file-if-exists=.env pipeline/index.js --classifier=file",
-    "test": "node --test \"tests/**/*.test.js\""
+    "test": "node --test \"tests/**/*.test.js\"",
+    "deploy": "node scripts/deploy-pages.mjs"
   },
   "dependencies": {
     "@google/genai": "2.31.0",
