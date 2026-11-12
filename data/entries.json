@@ -924,6 +924,17 @@
     "deltaSeconds": 0.5
   },
   {
+    "id": "5e97f2194ae2",
+    "date": "2026-10-23",
+    "source": "Al Jazeera",
+    "title": "Ações de tecnologia dos EUA caem com preocupação sobre gastos em IA",
+    "summary": "As ações de tecnologia recuaram com investidores preocupados com o retorno dos gastos em IA.",
+    "url": "https://www.aljazeera.com/economy/2026/10/23/us-tech-stocks-tumble-as-investors-fret-over-ai-spending",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 1.3
+  },
+  {
     "id": "6a312cc23b4b",
     "date": "2026-10-23",
     "source": "The New York Times (economia)",
@@ -1309,6 +1320,17 @@
     "deltaSeconds": 1.1
   },
   {
+    "id": "14d6ff8ac309",
+    "date": "2026-10-15",
+    "source": "LetsDataScience",
+    "title": "TSMC diz que demanda por IA ainda supera sua capacidade e tem lucro recorde",
+    "summary": "A receita do terceiro trimestre foi de cerca de US$ 46,7 bi (+41%). A empresa manteve o investimento de 2026 em US$ 60 a 64 bi, e as ações recuaram com foco em margens e gastos.",
+    "url": "https://letsdatascience.com/news/tsmc-says-ai-demand-still-exceeds-its-supply-capability-as-q-2fed75bf",
+    "gaugeId": "demand",
+    "evidence": "dado",
+    "deltaSeconds": -1.5
+  },
+  {
     "id": "7c1fe4186b29",
     "date": "2026-10-14",
     "source": "Folha de S.Paulo (tecnologia)",
@@ -1406,5 +1428,192 @@
     "gaugeId": "demand",
     "evidence": "dado",
     "deltaSeconds": -2.3
+  },
+  {
+    "id": "7ee501b67e5c",
+    "date": "2026-10-05",
+    "source": "Honolulu Star-Advertiser (Reuters)",
+    "title": "Nasdaq fecha em máxima, mas com poucos papéis subindo",
+    "summary": "O índice fechou em 27.477 pontos, com 243 novas mínimas contra 57 novas máximas.",
+    "url": "https://www.staradvertiser.com/2026/10/05/breaking-news/nasdaq-notches-record-high-close-as-investors-focus-on-earnings",
+    "gaugeId": "valuations",
+    "evidence": "dado",
+    "deltaSeconds": 0.8
+  },
+  {
+    "id": "da1089d45857",
+    "date": "2026-10-03",
+    "source": "Business Today",
+    "title": "Nvidia chega perto de nova máxima com recompra de US$ 150 bi",
+    "summary": "A ação bateu máxima em 2 de outubro, depois de uma queda de dois meses que tinha apagado mais de US$ 1 tri do valor da empresa.",
+    "url": "https://www.businesstoday.in/markets/stocks/story/nvidia-shares-approach-record-high-as-ai-optimism-revives-investor-demand-559348-2026-10-03",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 0.6
+  },
+  {
+    "id": "e7b0e6491b9d",
+    "date": "2026-09-22",
+    "source": "Bizpacreview",
+    "title": "Dívida das big techs para a IA deve bater novo recorde",
+    "summary": "A emissão de dívida das grandes empresas de tecnologia para financiar a IA deve atingir um novo marco.",
+    "url": "https://www.bizpacreview.com/2026/09/22/big-techs-ai-debt-binge-set-to-hit-new-eye-popping-milestone-1660051",
+    "gaugeId": "financing",
+    "evidence": "reportagem",
+    "deltaSeconds": 1.7
+  },
+  {
+    "id": "2ad2e7e8cb4a",
+    "date": "2026-09-18",
+    "source": "Kitco (Reuters)",
+    "title": "Fed sobe os juros para 3,75% a 4,00% e investidores olham a desaceleração da IA",
+    "summary": "É a primeira alta desde 2023, e 16 de 18 dirigentes projetam ao menos mais uma alta neste ano.",
+    "url": "https://www.kitco.com/news/off-the-wire/2026-09-18/wall-st-week-ahead-investors-focus-on-rate-path-ai-slowdown-after-fed",
+    "gaugeId": "macro",
+    "evidence": "dado",
+    "deltaSeconds": 2.6
+  },
+  {
+    "id": "c302377cbf94",
+    "date": "2026-09-15",
+    "source": "Invezz",
+    "title": "Juros dos EUA a 10 anos tocam 5%, o maior nível desde 2007",
+    "summary": "O rendimento do título de 10 anos chegou perto de 5,01%, pressionando ações de crescimento e de IA.",
+    "url": "https://invezz.com/news/2026/09/15/us-yields-just-hit-a-19-year-high-these-5-stocks-could-take-the-biggest-hit",
+    "gaugeId": "macro",
+    "evidence": "dado",
+    "deltaSeconds": 2.4
+  },
+  {
+    "id": "3ffdfa93e5c7",
+    "date": "2026-09-10",
+    "source": "Oracle (comunicado)",
+    "title": "Oracle tem receita 30% maior, mas fluxo de caixa livre negativo em US$ 5 bi",
+    "summary": "A carteira de contratos chegou a cerca de US$ 664 bi. O investimento do trimestre foi de US$ 28 bi, e a empresa levantou US$ 20 bi vendendo ações no mercado.",
+    "url": "https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10",
+    "gaugeId": "capex",
+    "evidence": "dado",
+    "deltaSeconds": 3.4
+  },
+  {
+    "id": "0fcb6f2d035f",
+    "date": "2026-09-09",
+    "source": "LetsDataScience",
+    "title": "Amazon capta £ 4,25 bi em estreia no mercado de títulos em libras",
+    "summary": "Os pedidos passaram de £ 10,65 bi. As grandes empresas de tecnologia seguem recorrendo ao mercado de dívida para financiar a infraestrutura de IA.",
+    "url": "https://letsdatascience.com/news/amazon-raises-gbp425-billion-in-debut-sterling-bond-sale-9ee1396e",
+    "gaugeId": "financing",
+    "evidence": "reportagem",
+    "deltaSeconds": 1.9
+  },
+  {
+    "id": "9952e7692f15",
+    "date": "2026-08-27",
+    "source": "SiliconANGLE",
+    "title": "Ação da Marvell cai apesar de balanço e projeção fortes",
+    "summary": "A Marvell elevou as projeções de receita, mas as ações caíram mais de 7% após o pregão, depois de subir mais de 40% desde o fim de julho.",
+    "url": "https://siliconangle.com/2026/08/27/marvells-stock-sinks-despite-earnings-beat-and-strong-guidance",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 0.5
+  },
+  {
+    "id": "b7a359f1a9a7",
+    "date": "2026-08-26",
+    "source": "Invezz",
+    "title": "Nvidia supera previsões e eleva projeção, mas ação cai 1%",
+    "summary": "A receita do segundo trimestre fiscal foi de US$ 96,2 bi (+106%), contra US$ 92,3 bi esperados. A projeção para o próximo é de US$ 108 bi, sem contar receita de data center na China.",
+    "url": "https://invezz.com/news/2026/08/26/nvidia-stock-slips-1-despite-beating-earnings-expectations-and-raising-guidance",
+    "gaugeId": "demand",
+    "evidence": "dado",
+    "deltaSeconds": -1.5
+  },
+  {
+    "id": "2dfe4b3ce851",
+    "date": "2026-08-26",
+    "source": "HPCwire",
+    "title": "Proibir data centers de IA foi longe demais?",
+    "summary": "A oposição por causa da conta de luz se espalha: Nova York teria imposto moratória estadual em meados de julho e a Virgínia avalia revogar benefício fiscal.",
+    "url": "https://www.hpcwire.com/aiwire/2026/08/26/are-ai-data-center-bans-going-too-far",
+    "gaugeId": "macro",
+    "evidence": "opiniao",
+    "deltaSeconds": 0.2
+  },
+  {
+    "id": "bad2500b0e52",
+    "date": "2026-08-24",
+    "source": "StartupHub.ai",
+    "title": "Micron e MongoDB afundam e chips de IA caem antes do balanço da Nvidia",
+    "summary": "O índice de semicondutores perdeu 2,67% na segunda-feira.",
+    "url": "https://www.startuphub.ai/news/ai-stocks-2026-08-24",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 0.5
+  },
+  {
+    "id": "5de56a056464",
+    "date": "2026-08-19",
+    "source": "SentiSense",
+    "title": "Venda de ações de IA derruba bolsas pelo mundo",
+    "summary": "As bolsas caíram em 19 de agosto com forte venda de papéis ligados à IA. O S&P 500 perdeu cerca de 0,7%.",
+    "url": "https://app.sentisense.ai/stories/ai-stock-sell-off-triggers-global-share-declines-as-markets-eye-middle-east-tens-08192026",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 0.5
+  },
+  {
+    "id": "7ac5ce81094e",
+    "date": "2026-08-17",
+    "source": "Channel Insider",
+    "title": "Receita anualizada da Anthropic chega a US$ 65 bi, segundo a Bloomberg",
+    "summary": "Ao fim de julho, a taxa anualizada da Anthropic era de cerca de US$ 65 bi, contra US$ 47 bi em maio. A da OpenAI passava de US$ 40 bi. As empresas podem calcular o indicador de formas diferentes.",
+    "url": "https://www.channelinsider.com/news-and-trends/news-anthropic-revenue-run-rate-outpaces-openai",
+    "gaugeId": "demand",
+    "evidence": "reportagem",
+    "deltaSeconds": -1
+  },
+  {
+    "id": "2f26450c3159",
+    "date": "2026-08-11",
+    "source": "CoreWeave (comunicado)",
+    "title": "CoreWeave tem receita 112% maior, mas prejuízo de US$ 626 mi e juros de US$ 640 mi",
+    "summary": "O investimento do trimestre foi de US$ 9,4 bi e a projeção do ano subiu para US$ 35 a 39 bi. A carteira de contratos chega a cerca de US$ 104 bi.",
+    "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Second-Quarter-2026-Results",
+    "gaugeId": "financing",
+    "evidence": "dado",
+    "deltaSeconds": 2.9
+  },
+  {
+    "id": "6fd0df65abc2",
+    "date": "2026-08-06",
+    "source": "Fortune",
+    "title": "SoftBank tem lucro 18% menor, sem ganho com a OpenAI, e prepara empréstimo com ações da OpenAI como garantia",
+    "summary": "A participação na OpenAI não gerou ganho no trimestre, contra cerca de US$ 20 bi no anterior. A SoftBank planeja mais US$ 10 bi na OpenAI em outubro, e o Vision Fund 2 deve tomar US$ 10 bi dando ações da OpenAI como garantia.",
+    "url": "https://fortune.com/2026/08/06/softbank-earnings-beat-intel-openai-flat",
+    "gaugeId": "financing",
+    "evidence": "reportagem",
+    "deltaSeconds": 2
+  },
+  {
+    "id": "cd0c7a27f7b5",
+    "date": "2026-08-04",
+    "source": "XTB",
+    "title": "Palantir tem receita 93% maior no trimestre e eleva projeção do ano",
+    "summary": "A receita do segundo trimestre subiu a US$ 1,94 bi e o lucro ajustado por ação cresceu 156%.",
+    "url": "https://www.xtb.com/ae-en/market-analysis/news-and-research/palantir-earnings-high-expectations-and-even-bigger-gains",
+    "gaugeId": "demand",
+    "evidence": "dado",
+    "deltaSeconds": -0.6
+  },
+  {
+    "id": "29c0318af657",
+    "date": "2026-07-25",
+    "source": "Invezz",
+    "title": "Por que as ações das neoclouds ligadas à Nvidia estão despencando",
+    "summary": "CoreWeave, Nebius e IREN caíram forte com custos maiores de servidores, memória e chips e nova concorrência. A IREN está 47% abaixo do pico do ano e a CoreWeave tem 27% das ações vendidas a descoberto.",
+    "url": "https://invezz.com/news/2026/07/25/why-are-nvidia-backed-coreweave-nebius-and-iren-stocks-plunging",
+    "gaugeId": "valuations",
+    "evidence": "reportagem",
+    "deltaSeconds": 1.3
   }
 ]

@@ -6,31 +6,31 @@
   },
   "index": 70,
   "baseIndex": 70,
-  "secondsToMidnight": 274,
+  "secondsToMidnight": 270,
   "deadline": {
-    "fromMonths": 12,
-    "toMonths": 24
+    "fromMonths": 3,
+    "toMonths": 12
   },
   "crashProbability": {
-    "fromPercent": 35,
-    "toPercent": 50
+    "fromPercent": 50,
+    "toPercent": 65
   },
   "confidence": "média",
-  "deltaSeconds7d": 12,
-  "updatedAt": "2026-11-12T04:36:18.343Z",
+  "deltaSeconds7d": 11,
+  "updatedAt": "2026-11-12T04:59:07.035Z",
   "gauges": [
     {
       "id": "financing",
       "name": "Crédito e alavancagem",
       "weight": 0.25,
-      "score": 84,
+      "score": 86,
       "weeklyDelta": 7
     },
     {
       "id": "valuations",
       "name": "Valuations e concentração",
       "weight": 0.17,
-      "score": 84,
+      "score": 85,
       "weeklyDelta": 5
     },
     {
@@ -51,14 +51,14 @@
       "id": "demand",
       "name": "Demanda real e adoção",
       "weight": 0.12,
-      "score": 32,
+      "score": 31,
       "weeklyDelta": -2
     },
     {
       "id": "macro",
       "name": "Gatilhos: juros, liquidez e regulação",
       "weight": 0.12,
-      "score": 59,
+      "score": 60,
       "weeklyDelta": 3
     },
     {
@@ -71,22 +71,22 @@
   ],
   "priceSignal": {
     "label": "Nasdaq Composite",
-    "asOf": "2026-11-10",
-    "lastValue": 25065.9,
+    "asOf": "2026-11-11",
+    "lastValue": 25466.2,
     "peakValue": 27599.9,
     "peakDate": "2026-10-06",
-    "tradingDaysSincePeak": 25,
-    "drawdownPercent": 9.2,
+    "tradingDaysSincePeak": 26,
+    "drawdownPercent": 7.7,
     "phase": {
       "id": "tension",
       "label": "Tensão"
     },
     "progress": 0,
-    "baseIndex": 69.51614854562912,
-    "adjustedIndex": 69.51614854562912,
+    "baseIndex": 70.0195744570722,
+    "adjustedIndex": 70.0195744570722,
     "baseRates": {
       "from": "1971-02-05",
-      "to": "2026-11-10",
+      "to": "2026-11-11",
       "events": 39,
       "reached20": 18,
       "reached30": 10,
@@ -99,154 +99,454 @@
     }
   },
   "weeklySummary": {
-    "headline": "Escândalo na Nvidia e IPO gigante da Anthropic puxam o risco: relógio avança 12 s",
+    "headline": "Escândalo na Nvidia e IPO gigante da Anthropic puxam o risco: relógio avança 11 s",
     "text": "A Nvidia caiu mais de 8% após o pregão de quarta (11/11) com o conselho avaliando o futuro do CEO Jensen Huang. A Anthropic fixou faixa de US$ 70 a US$ 78 por ação, estreia em 19/11 e avaliação que pode passar de US$ 1,5 tri.\n\nA CoreWeave subiu 24% com balanço forte, mas seus títulos rendem mais de 16% e ela prepara dívida lastreada em chips; o SoftBank teve prejuízo de US$ 7 bi. Financiamento (+7), valuations (+5) e euforia (+3) mais subiram; só a demanda recuou (−2).",
-    "asOf": "2026-11-12T04:36:11.669Z"
+    "asOf": "2026-11-12T04:59:06.250Z"
   },
   "history": [
     {
-      "date": "2026-10-08",
+      "date": "2026-07-25",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-26",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-27",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-28",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-29",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-30",
+      "index": 59.1
+    },
+    {
+      "date": "2026-07-31",
+      "index": 59.1
+    },
+    {
+      "date": "2026-08-01",
+      "index": 59.1
+    },
+    {
+      "date": "2026-08-02",
+      "index": 59.1
+    },
+    {
+      "date": "2026-08-03",
+      "index": 59.1
+    },
+    {
+      "date": "2026-08-04",
       "index": 59
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-08-05",
+      "index": 59
+    },
+    {
+      "date": "2026-08-06",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-07",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-08",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-09",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-10",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-11",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-12",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-13",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-14",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-15",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-16",
+      "index": 59.5
+    },
+    {
+      "date": "2026-08-17",
       "index": 59.4
     },
     {
-      "date": "2026-10-10",
+      "date": "2026-08-18",
       "index": 59.3
     },
     {
-      "date": "2026-10-11",
+      "date": "2026-08-19",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-20",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-21",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-22",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-23",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-24",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-25",
+      "index": 59.4
+    },
+    {
+      "date": "2026-08-26",
+      "index": 59.2
+    },
+    {
+      "date": "2026-08-27",
+      "index": 59.3
+    },
+    {
+      "date": "2026-08-28",
+      "index": 59.3
+    },
+    {
+      "date": "2026-08-29",
+      "index": 59.3
+    },
+    {
+      "date": "2026-08-30",
+      "index": 59.3
+    },
+    {
+      "date": "2026-08-31",
+      "index": 59.3
+    },
+    {
+      "date": "2026-09-01",
+      "index": 59.3
+    },
+    {
+      "date": "2026-09-02",
+      "index": 59.3
+    },
+    {
+      "date": "2026-09-03",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-04",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-05",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-06",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-07",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-08",
+      "index": 59.2
+    },
+    {
+      "date": "2026-09-09",
+      "index": 59.4
+    },
+    {
+      "date": "2026-09-10",
       "index": 59.8
     },
     {
-      "date": "2026-10-12",
+      "date": "2026-09-11",
+      "index": 59.8
+    },
+    {
+      "date": "2026-09-12",
+      "index": 59.8
+    },
+    {
+      "date": "2026-09-13",
+      "index": 59.7
+    },
+    {
+      "date": "2026-09-14",
+      "index": 59.7
+    },
+    {
+      "date": "2026-09-15",
       "index": 60
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-09-16",
+      "index": 60
+    },
+    {
+      "date": "2026-09-17",
       "index": 59.9
     },
     {
-      "date": "2026-10-14",
-      "index": 59.8
-    },
-    {
-      "date": "2026-10-15",
-      "index": 60
-    },
-    {
-      "date": "2026-10-16",
-      "index": 60
-    },
-    {
-      "date": "2026-10-17",
-      "index": 60
-    },
-    {
-      "date": "2026-10-18",
+      "date": "2026-09-18",
       "index": 60.2
     },
     {
-      "date": "2026-10-19",
+      "date": "2026-09-19",
+      "index": 60.2
+    },
+    {
+      "date": "2026-09-20",
+      "index": 60.1
+    },
+    {
+      "date": "2026-09-21",
+      "index": 60.1
+    },
+    {
+      "date": "2026-09-22",
       "index": 60.3
     },
     {
-      "date": "2026-10-20",
-      "index": 60.7
+      "date": "2026-09-23",
+      "index": 60.2
     },
     {
-      "date": "2026-10-21",
+      "date": "2026-09-24",
+      "index": 60.2
+    },
+    {
+      "date": "2026-09-25",
+      "index": 60.2
+    },
+    {
+      "date": "2026-09-26",
+      "index": 60.2
+    },
+    {
+      "date": "2026-09-27",
+      "index": 60.1
+    },
+    {
+      "date": "2026-09-28",
+      "index": 60.1
+    },
+    {
+      "date": "2026-09-29",
+      "index": 60.1
+    },
+    {
+      "date": "2026-09-30",
+      "index": 60.1
+    },
+    {
+      "date": "2026-10-01",
+      "index": 60
+    },
+    {
+      "date": "2026-10-02",
+      "index": 60
+    },
+    {
+      "date": "2026-10-03",
+      "index": 60
+    },
+    {
+      "date": "2026-10-04",
+      "index": 60
+    },
+    {
+      "date": "2026-10-05",
+      "index": 60.1
+    },
+    {
+      "date": "2026-10-06",
+      "index": 60.1
+    },
+    {
+      "date": "2026-10-07",
+      "index": 60
+    },
+    {
+      "date": "2026-10-08",
+      "index": 60
+    },
+    {
+      "date": "2026-10-09",
+      "index": 60.4
+    },
+    {
+      "date": "2026-10-10",
+      "index": 60.4
+    },
+    {
+      "date": "2026-10-11",
+      "index": 60.8
+    },
+    {
+      "date": "2026-10-12",
       "index": 60.9
     },
     {
+      "date": "2026-10-13",
+      "index": 60.9
+    },
+    {
+      "date": "2026-10-14",
+      "index": 60.7
+    },
+    {
+      "date": "2026-10-15",
+      "index": 60.8
+    },
+    {
+      "date": "2026-10-16",
+      "index": 60.7
+    },
+    {
+      "date": "2026-10-17",
+      "index": 60.7
+    },
+    {
+      "date": "2026-10-18",
+      "index": 60.9
+    },
+    {
+      "date": "2026-10-19",
+      "index": 60.9
+    },
+    {
+      "date": "2026-10-20",
+      "index": 61.4
+    },
+    {
+      "date": "2026-10-21",
+      "index": 61.6
+    },
+    {
       "date": "2026-10-22",
-      "index": 62.4
+      "index": 63.1
     },
     {
       "date": "2026-10-23",
-      "index": 63.5
+      "index": 64.3
     },
     {
       "date": "2026-10-24",
-      "index": 63.4
+      "index": 64.2
     },
     {
       "date": "2026-10-25",
-      "index": 63.3
+      "index": 64.1
     },
     {
       "date": "2026-10-26",
-      "index": 63.5
+      "index": 64.2
     },
     {
       "date": "2026-10-27",
-      "index": 63.5
+      "index": 64.2
     },
     {
       "date": "2026-10-28",
-      "index": 63.4
+      "index": 64
     },
     {
       "date": "2026-10-29",
-      "index": 63.4
+      "index": 64
     },
     {
       "date": "2026-10-30",
-      "index": 64.4
+      "index": 65.1
     },
     {
       "date": "2026-10-31",
-      "index": 64.9
+      "index": 65.6
     },
     {
       "date": "2026-11-01",
-      "index": 64.8
+      "index": 65.4
     },
     {
       "date": "2026-11-02",
-      "index": 65
+      "index": 65.6
     },
     {
       "date": "2026-11-03",
-      "index": 65.5
+      "index": 66.1
     },
     {
       "date": "2026-11-04",
-      "index": 68.2
+      "index": 68.7
     },
     {
       "date": "2026-11-05",
-      "index": 68.1
+      "index": 68.7
     },
     {
       "date": "2026-11-06",
-      "index": 68.6
+      "index": 69.2
     },
     {
       "date": "2026-11-07",
-      "index": 68.4
+      "index": 69
     },
     {
       "date": "2026-11-08",
-      "index": 67.4
+      "index": 68
     },
     {
       "date": "2026-11-09",
-      "index": 67.4
+      "index": 67.9
     },
     {
       "date": "2026-11-10",
-      "index": 68.9
+      "index": 69.4
     },
     {
       "date": "2026-11-11",
-      "index": 69.5
+      "index": 70
     },
     {
       "date": "2026-11-12",
-      "index": 69.5
+      "index": 70
     }
   ]
 }
