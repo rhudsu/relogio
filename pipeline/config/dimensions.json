@@ -1,0 +1,72 @@
+[
+  {
+    "id": "financing",
+    "name": "Crédito e alavancagem",
+    "weight": 0.25,
+    "baseline": 65,
+    "halfLifeDays": 45,
+    "description": "Dívida de empresas de IA, crédito privado, acordos circulares entre fornecedores e clientes, spreads e seguros contra calote (CDS), dependência de capital externo e alavancagem de balanços. Mais dívida, spreads e CDS subindo, crédito mais difícil ou mais caro e risco concentrado aproximam o estouro. Financiamento com caixa próprio, spreads comprimindo e crédito saudável afastam.",
+    "baselineBasis": "FMI (GFSR, out/2026): as grandes empresas de nuvem respondem por quase 10% da emissão global de títulos corporativos de grau de investimento em 2026, contra 0,5% em 2024; o fluxo de caixa livre encolheu, as despesas de juros mais que dobraram em um ano e os spreads dessas empresas abriram cerca de 30 pontos-base a mais que o índice amplo. Pesa a favor da estabilidade: cobertura de juros ainda confortável e balanços fortes.",
+    "evidenceBasis": "Principal preditor empírico de crises: Greenwood, Hanson, Shleifer e Sørensen (2022); Jordà, Schularick e Taylor (2015); Borio e Lowe (2002); Minsky (1986)."
+  },
+  {
+    "id": "valuations",
+    "name": "Valuations e concentração",
+    "weight": 0.17,
+    "baseline": 70,
+    "halfLifeDays": 30,
+    "description": "Múltiplos de preço das empresas de IA e do mercado, alta acelerada de preços, avaliações de empresas privadas, concentração do índice em poucas ações e saída de grandes investidores institucionais. Valuations esticados e concentração recorde aproximam; correções que aproximam os preços dos resultados afastam.",
+    "baselineBasis": "CAPE do S&P 500 em 40,1 (Multpl, 30/out/2026), a 85% do caminho entre a média histórica (17,4) e o recorde de dez/1999 (44,2). As dez maiores ações pesam cerca de 39% a 41% do índice, contra 26% a 27% no pico de 2000 (Apollo e Bloomberg, fontes secundárias). Pesa a favor: os múltiplos sobre lucros futuros caíram desde abril, segundo o FMI.",
+    "evidenceBasis": "Greenwood, Shleifer e You (2019): altas muito rápidas elevam a chance de colapso, mas não indicam o momento. Shiller (2000) e o CAPE: valuations altos prevêem retornos futuros baixos."
+  },
+  {
+    "id": "capex",
+    "name": "Investimento contra receita",
+    "weight": 0.18,
+    "baseline": 60,
+    "halfLifeDays": 45,
+    "description": "Gasto em data centers, chips e energia comparado com a receita real que a IA gera, fluxo de caixa livre das empresas que investem e retorno sobre o capital. Investimento crescendo bem acima da receita, fluxo de caixa livre negativo e projetos atrasados aproximam; receita de IA alcançando o gasto afasta.",
+    "baselineBasis": "As quatro maiores empresas de nuvem planejam cerca de US$ 700 a 725 bilhões de investimento em 2026 (reportagens sobre os balanços de abril, fonte secundária). Segundo o resumo de uma análise do BIS (fonte secundária), o investimento em tecnologia da informação passou de 5% do PIB, mais que no pico de 2000. Pesa a favor: a receita de nuvem e de IA cresce em ritmo forte, como Google Cloud (+63%) e a receita anualizada de IA da Microsoft (US$ 37 bilhões). O nível foi fixado em 60, abaixo do que o tamanho do investimento sugeriria, porque as duas fontes do gasto são secundárias e a receita cresce rápido.",
+    "evidenceBasis": "Perez (2002): na fase de frenesi o capital financeiro se descola da produção. Acemoglu (2025) estima ganho de produtividade de no máximo 0,66% em dez anos. Cahn (Sequoia, 2024): análise do descompasso entre gasto e receita (análise de mercado, não acadêmica)."
+  },
+  {
+    "id": "sentiment",
+    "name": "Euforia e emissão de ações",
+    "weight": 0.12,
+    "baseline": 60,
+    "halfLifeDays": 14,
+    "description": "Sinais de euforia no mercado de ações: ofertas públicas iniciais (IPOs) em volume ou preço recorde ou, ao contrário, canceladas e adiadas, expiração de lockups e venda de insiders, emissão de novas ações, ETFs alavancados, dívida de margem, volume de negociação, participação do varejo e linguagem de 'nova era'. Mais euforia e mais oferta de ações aproximam; fuga de investidores e IPOs fracassados também sinalizam o início da virada e aproximam.",
+    "baselineBasis": "Dívida de margem em US$ 1,48 trilhão em set/2026 (FINRA), perto do recorde de US$ 1,50 trilhão de jun/2026, que cresceu bem mais que o mercado em 12 meses (fonte secundária). O FMI aponta alta de ETFs alavancados, margem e posições de hedge funds, pipeline recorde de listagens de IA, lockups vencendo e emissão líquida de ações voltando a ser positiva em 2026 pela primeira vez desde 2021. Pesa a favor: a margem em relação ao valor de mercado está na média histórica.",
+    "evidenceBasis": "Baker e Wurgler (2006): IPOs, retorno do primeiro dia e emissão de ações medem sentimento. Ofek e Richardson (2003): lockups e venda de insiders ligados ao estouro da bolha pontocom. Scheinkman e Xiong (2003): bolhas vêm com volume alto. Greenwood, Shleifer e You (2019): volume e emissão ajudam a prever o colapso."
+  },
+  {
+    "id": "demand",
+    "name": "Demanda real e adoção",
+    "weight": 0.12,
+    "baseline": 40,
+    "halfLifeDays": 45,
+    "description": "Contratos pagos, receita real de IA, renovação de clientes, uso recorrente e retorno medido por empresas. Esta dimensão é invertida: boa demanda e adoção real AFASTAM o estouro; receita abaixo do esperado, clientes desistindo, projetos cancelados e queda de uso APROXIMAM.",
+    "baselineBasis": "A demanda observável segue forte: Google Cloud cresceu 63%, a receita anualizada de IA da Microsoft é de US$ 37 bilhões (+123%) e o AWS acelerou (balanços de abril, fonte secundária), além de pedidos da ASML e da TSMC acima da capacidade. É o termômetro que mais sustenta os fundamentos, por isso começa abaixo do neutro.",
+    "evidenceBasis": "Brynjolfsson, Rock e Syverson (2021): em tecnologias de uso geral o retorno medido demora, então ausência de retorno no curto prazo pesa menos do que sinais de crédito. Acemoglu (2025) mantém cautela sobre o tamanho do ganho."
+  },
+  {
+    "id": "macro",
+    "name": "Gatilhos: juros, liquidez e regulação",
+    "weight": 0.12,
+    "baseline": 50,
+    "halfLifeDays": 21,
+    "description": "Eventos que podem disparar a virada: alta de juros e de custo de captação, aperto de liquidez, choques de energia e de petróleo, guerra, controles de exportação de chips, tensão em Taiwan, regulação, oposição pública a data centers e risco político sobre bancos centrais. Choques e aperto aproximam; alívio de juros, acordos e regras favoráveis afastam.",
+    "baselineBasis": "O FMI (out/2026) lista a correção de ativos de IA entre os três riscos principais, ao lado de custos de empréstimo soberano mais altos e riscos cibernéticos, e cita juros mais altos como possível gatilho; o FMI (abril) e o BIS destacam também tensões geopolíticas e inflação. O Banco da Inglaterra (out/2025) alertou para gargalos de energia e para a independência do banco central americano. Fixado no neutro (50) porque o nível é quase só qualitativo e não há dado quantitativo que justifique sair dele.",
+    "evidenceBasis": "Kindleberger e Aliber (2023): a virada costuma vir com aperto de crédito e liquidez. Abreu e Brunnermeier (2003): notícias podem sincronizar a venda e ter efeito desproporcional. Reinhart e Rogoff (2009): ondas de entrada de capital e choques de juros costumam anteceder crises."
+  },
+  {
+    "id": "technology",
+    "name": "Tecnologia e custos",
+    "weight": 0.04,
+    "baseline": 50,
+    "halfLifeDays": 60,
+    "description": "Ganhos de eficiência, custo por resposta, limites de energia e de chips e sinais de que o progresso dos modelos estagnou. Barateamento e avanços reais afastam; platô de qualidade e custos que não caem aproximam. Atenção: esta dimensão tem a menor evidência empírica como preditor de estouro; use magnitude baixa.",
+    "baselineBasis": "Sem dado sistemático que justifique sair do neutro. Há gargalos de energia reportados e queda rápida do custo por resposta, em direções opostas.",
+    "evidenceBasis": "Pouca evidência direta na literatura de bolhas: a tecnologia afeta o risco principalmente pelos canais de receita e custo, que já entram nos outros termômetros. Por isso tem o menor peso."
+  }
+]

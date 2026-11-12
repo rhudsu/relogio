@@ -1,0 +1,20 @@
+# Segredos e credenciais: nunca vão para o repositório
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+application_default_credentials.json
+.gcloud/
+
+# Dependências e temporários
+node_modules/
+*.tmp
+*.log
+
+# Configuração local do Claude Code
+.claude/settings.local.json

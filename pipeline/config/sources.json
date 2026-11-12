@@ -1,0 +1,53 @@
+{
+  "rss": [
+    { "id": "bbc-business", "name": "BBC News (economia)", "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
+    { "id": "bbc-technology", "name": "BBC News (tecnologia)", "url": "https://feeds.bbci.co.uk/news/technology/rss.xml" },
+    { "id": "guardian-ai", "name": "The Guardian (IA)", "url": "https://www.theguardian.com/technology/artificialintelligenceai/rss" },
+    { "id": "guardian-business", "name": "The Guardian (economia)", "url": "https://www.theguardian.com/business/rss" },
+    { "id": "nyt-technology", "name": "The New York Times (tecnologia)", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml" },
+    { "id": "nyt-business", "name": "The New York Times (economia)", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml" },
+    { "id": "techcrunch-ai", "name": "TechCrunch (IA)", "url": "https://techcrunch.com/category/artificial-intelligence/feed/" },
+    { "id": "ars-technica", "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index" },
+    { "id": "the-verge", "name": "The Verge", "url": "https://www.theverge.com/rss/index.xml" },
+    { "id": "cnbc-technology", "name": "CNBC (tecnologia)", "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html" },
+    { "id": "cnbc-markets", "name": "CNBC (mercados)", "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html" },
+    { "id": "marketwatch", "name": "MarketWatch", "url": "http://feeds.marketwatch.com/marketwatch/topstories/" },
+    { "id": "ft-technology", "name": "Financial Times (tecnologia)", "url": "https://www.ft.com/technology?format=rss" },
+    { "id": "wsj-markets", "name": "The Wall Street Journal (mercados)", "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml" },
+    { "id": "wsj-technology", "name": "The Wall Street Journal (tecnologia)", "url": "https://feeds.a.dj.com/rss/RSSWSJD.xml" },
+    { "id": "folha-tec", "name": "Folha de S.Paulo (tecnologia)", "url": "https://feeds.folha.uol.com.br/tec/rss091.xml" },
+    { "id": "infomoney", "name": "InfoMoney", "url": "https://www.infomoney.com.br/feed/" }
+  ],
+  "gdelt": [
+    { "id": "ai-bubble", "query": "(\"AI bubble\" OR \"artificial intelligence bubble\") sourcelang:english" },
+    { "id": "ai-capex", "query": "\"artificial intelligence\" (capex OR \"data center\" OR \"data centers\" OR valuation) sourcelang:english" },
+    { "id": "ai-financing", "query": "(\"AI\" OR \"artificial intelligence\") (debt OR \"private credit\" OR \"circular financing\") sourcelang:english" }
+  ],
+  "relevanceKeywords": [
+    "artificial intelligence",
+    "inteligência artificial",
+    "inteligencia artificial",
+    "generative",
+    "openai",
+    "anthropic",
+    "nvidia",
+    "chatgpt",
+    "gemini",
+    "copilot",
+    "llm",
+    "gpu",
+    "data center",
+    "data centers",
+    "datacenter",
+    "datacenters",
+    "hyperscaler",
+    "capex",
+    "tsmc",
+    "semiconductor",
+    "semicondutores",
+    "export controls",
+    "ai bubble",
+    "bolha da ia"
+  ],
+  "caseSensitiveKeywords": ["AI", "IA"]
+}

@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relógio da Salvação (mockup)</title>
+  <meta name="description" content="Mockup do Relógio da Salvação: quanto falta para a bolha da IA estourar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mockup.css">
+</head>
+<body>
+  <p class="notice">Mockup de design. Todos os números e notícias abaixo são ilustrativos.</p>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="#topo">Relógio da Salvação</a>
+    <nav class="topbar__nav" aria-label="Seções">
+      <a href="#termometros">Termômetros</a>
+      <a href="#diario">Diário</a>
+      <a href="#metodo">Método</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="container">
+        <h1 id="titulo" class="hero__title">Quanto falta para a bolha da IA estourar</h1>
+        <p class="hero__lead">Um índice diário, calculado por IA a partir de notícias, balanços e geopolítica. Quando o ponteiro chega à meia-noite, a bolha estourou.</p>
+
+        <svg class="clock" viewBox="0 0 520 580" role="img" aria-labelledby="clock-title clock-desc">
+          <title id="clock-title">Despertador marcando 11h53min51s</title>
+          <desc id="clock-desc">Faltam 6 minutos e 9 segundos para a meia-noite. O alarme está ajustado para as 12.</desc>
+          <defs>
+            <radialGradient id="esmalte" cx="32%" cy="24%" r="90%">
+              <stop offset="0" stop-color="#D4E7F3"/>
+              <stop offset="0.35" stop-color="#9CC0D8"/>
+              <stop offset="0.75" stop-color="#5A86A3"/>
+              <stop offset="1" stop-color="#3B627D"/>
+            </radialGradient>
+            <linearGradient id="cromo" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="0.22" stop-color="#9AA7B6"/>
+              <stop offset="0.45" stop-color="#F1F5F9"/>
+              <stop offset="0.72" stop-color="#6A7889"/>
+              <stop offset="1" stop-color="#C7D1DC"/>
+            </linearGradient>
+            <radialGradient id="domo" cx="34%" cy="70%" r="85%">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="0.4" stop-color="#C5CFDA"/>
+              <stop offset="0.8" stop-color="#7C8999"/>
+              <stop offset="1" stop-color="#566475"/>
+            </radialGradient>
+            <linearGradient id="brilho-borda" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+              <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+              <stop offset="1" stop-color="#0B0F26" stop-opacity="0.35"/>
+            </linearGradient>
+            <radialGradient id="mostrador" cx="50%" cy="40%" r="75%">
+              <stop offset="0" stop-color="#FBFCF8"/>
+              <stop offset="0.8" stop-color="#E7E9E1"/>
+              <stop offset="1" stop-color="#CDD1C8"/>
+            </radialGradient>
+            <radialGradient id="sombra-mostrador" cx="50%" cy="50%" r="50%">
+              <stop offset="0.82" stop-color="#1C2340" stop-opacity="0"/>
+              <stop offset="1" stop-color="#1C2340" stop-opacity="0.22"/>
+            </radialGradient>
+            <linearGradient id="vidro" x1="0" y1="0" x2="0.6" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.38"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="tampo" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3A4690"/>
+              <stop offset="1" stop-color="#1B2350"/>
+            </linearGradient>
+            <filter id="sombra-corpo" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity="0.5"/>
+            </filter>
+            <filter id="sombra-ponteiro" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="1.5" dy="3" stdDeviation="1.6" flood-color="#1C2340" flood-opacity="0.35"/>
+            </filter>
+            <clipPath id="quadrante-perigo">
+              <rect x="0" y="0" width="262" height="310"/>
+            </clipPath>
+            <clipPath id="recorte-mostrador">
+              <circle cx="260" cy="310" r="166"/>
+            </clipPath>
+          </defs>
+
+          <!-- tampo da cabeceira e sombra -->
+          <rect x="30" y="546" width="460" height="9" rx="4.5" fill="url(#tampo)"/>
+          <rect x="30" y="546" width="460" height="2" rx="1" fill="#6B77C4" opacity="0.5"/>
+          <ellipse cx="260" cy="548" rx="170" ry="7" fill="#000" opacity="0.4"/>
+
+          <!-- pés curvos -->
+          <path d="M168 486 L192 498 C182 516 170 534 160 548 L136 548 C146 526 156 504 168 486 Z" fill="url(#cromo)" stroke="#5A6778" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M352 486 L328 498 C338 516 350 534 360 548 L384 548 C374 526 364 504 352 486 Z" fill="url(#cromo)" stroke="#5A6778" stroke-width="1.5" stroke-linejoin="round"/>
+
+          <!-- sinos -->
+          <g class="clock__bells">
+            <g transform="translate(134 160) rotate(-40)">
+              <path d="M-66 0 A66 66 0 0 1 66 0 Z" fill="url(#domo)" stroke="#4E5B6C" stroke-width="2"/>
+              <path d="M-50 -8 A52 52 0 0 1 -22 -46" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+              <rect x="-68" y="-4" width="136" height="8" rx="4" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+              <rect x="-4" y="-76" width="8" height="12" rx="2" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.2"/>
+              <circle cx="0" cy="-78" r="7" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            </g>
+            <g transform="translate(386 160) rotate(40)">
+              <path d="M-66 0 A66 66 0 0 1 66 0 Z" fill="url(#domo)" stroke="#4E5B6C" stroke-width="2"/>
+              <path d="M-50 -8 A52 52 0 0 1 -22 -46" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+              <rect x="-68" y="-4" width="136" height="8" rx="4" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+              <rect x="-4" y="-76" width="8" height="12" rx="2" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.2"/>
+              <circle cx="0" cy="-78" r="7" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            </g>
+          </g>
+
+          <!-- vibração dos sinos (aparece só quando o alarme treme) -->
+          <g class="clock__rings" fill="none" stroke="#A9B2D4" stroke-width="3" stroke-linecap="round">
+            <g transform="translate(134 160) rotate(-40)">
+              <path d="M-32 -98 A103 103 0 0 1 32 -98"/>
+              <path d="M-40 -118 A125 125 0 0 1 40 -118" opacity="0.6"/>
+            </g>
+            <g transform="translate(386 160) rotate(40)">
+              <path d="M-32 -98 A103 103 0 0 1 32 -98"/>
+              <path d="M-40 -118 A125 125 0 0 1 40 -118" opacity="0.6"/>
+            </g>
+          </g>
+
+          <!-- martelo -->
+          <g class="clock__hammer">
+            <rect x="253" y="96" width="14" height="24" rx="3" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            <line x1="260" y1="112" x2="260" y2="70" stroke="#4E5B6C" stroke-width="5" stroke-linecap="round"/>
+            <line x1="204" y1="70" x2="316" y2="70" stroke="#4E5B6C" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="204" cy="70" r="10" fill="url(#domo)" stroke="#4E5B6C" stroke-width="1.5"/>
+            <circle cx="316" cy="70" r="10" fill="url(#domo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          </g>
+
+          <!-- caixa em esmalte -->
+          <g filter="url(#sombra-corpo)">
+            <circle cx="260" cy="310" r="200" fill="url(#esmalte)" stroke="#2F5570" stroke-width="3"/>
+          </g>
+          <circle cx="260" cy="310" r="193" fill="none" stroke="url(#brilho-borda)" stroke-width="4"/>
+
+          <!-- aro cromado -->
+          <circle cx="260" cy="310" r="178" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          <circle cx="260" cy="310" r="169" fill="none" stroke="#56647A" stroke-width="3"/>
+
+          <!-- mostrador -->
+          <circle cx="260" cy="310" r="166" fill="url(#mostrador)"/>
+          <circle cx="260" cy="310" r="166" fill="url(#sombra-mostrador)"/>
+
+          <!-- marcações de minutos e horas -->
+          <g transform="rotate(-90 260 310)" fill="none" stroke="#1C2340">
+            <circle cx="260" cy="310" r="155" stroke-width="10" stroke-dasharray="1.6 14.736" stroke-dashoffset="0.8"/>
+            <circle cx="260" cy="310" r="151" stroke-width="18" stroke-dasharray="4.4 77.28" stroke-dashoffset="2.2"/>
+          </g>
+          <!-- último quarto de hora em vermelho -->
+          <g clip-path="url(#quadrante-perigo)">
+            <g transform="rotate(-90 260 310)" fill="none" stroke="#D93B25">
+              <circle cx="260" cy="310" r="155" stroke-width="10" stroke-dasharray="1.6 14.736" stroke-dashoffset="0.8"/>
+              <circle cx="260" cy="310" r="151" stroke-width="18" stroke-dasharray="4.4 77.28" stroke-dashoffset="2.2"/>
+            </g>
+          </g>
+
+          <!-- numerais -->
+          <g font-family="Jost, sans-serif" font-weight="700" font-size="27" fill="#1C2340" text-anchor="middle" dominant-baseline="central">
+            <text x="260" y="192" fill="#D93B25" font-size="31">12</text>
+            <text x="319" y="208">1</text>
+            <text x="362" y="251">2</text>
+            <text x="378" y="310">3</text>
+            <text x="362" y="369">4</text>
+            <text x="319" y="412">5</text>
+            <text x="260" y="428">6</text>
+            <text x="201" y="412">7</text>
+            <text x="158" y="369">8</text>
+            <text x="142" y="310">9</text>
+            <text x="158" y="251">10</text>
+            <text x="201" y="208">11</text>
+          </g>
+
+          <g font-family="Jost, sans-serif" fill="#1C2340" text-anchor="middle">
+            <text x="260" y="356" font-size="15" font-weight="600" letter-spacing="1.2">Bolha da IA</text>
+            <text x="260" y="376" font-size="11" font-weight="500" opacity="0.65">Relógio da Salvação</text>
+          </g>
+
+          <!-- ponteiros: 11h53min51s -->
+          <g filter="url(#sombra-ponteiro)">
+            <!-- alarme ajustado para a meia-noite -->
+            <g>
+              <path d="M-3.2 22 L-1.8 -98 L0 -108 L1.8 -98 L3.2 22 Z" transform="translate(260 310)" fill="#D93B25"/>
+              <circle cx="260" cy="205" r="5.5" fill="#D93B25"/>
+            </g>
+            <g class="hand hand--hour" style="--angle: 356.9deg; --from: 266.9deg">
+              <g transform="translate(260 310)">
+                <path d="M0 -84 C9 -64 12 -46 7 -28 L5 20 L-5 20 L-7 -28 C-12 -46 -9 -64 0 -84 Z" fill="#1C2340"/>
+                <path d="M0 -70 C5.5 -57 7 -45 4 -31 L-4 -31 C-7 -45 -5.5 -57 0 -70 Z" fill="#E4EED2"/>
+              </g>
+            </g>
+            <g class="hand hand--minute" style="--angle: 323.1deg; --from: -36.9deg">
+              <g transform="translate(260 310)">
+                <path d="M0 -142 L5.5 -122 L4.5 22 L-4.5 22 L-5.5 -122 Z" fill="#1C2340"/>
+                <rect x="-2" y="-114" width="4" height="100" rx="1.5" fill="#E4EED2"/>
+              </g>
+            </g>
+            <g class="hand hand--second" style="--angle: 306deg; --from: -54deg">
+              <g transform="translate(260 310)">
+                <path d="M-1.4 34 L-0.9 -148 L0.9 -148 L1.4 34 Z" fill="#2F6F94"/>
+                <circle cx="0" cy="30" r="5.5" fill="#2F6F94"/>
+              </g>
+            </g>
+          </g>
+
+          <!-- tampa central -->
+          <circle cx="260" cy="310" r="10" fill="url(#cromo)" stroke="#4E5B6C" stroke-width="1.5"/>
+          <circle cx="260" cy="310" r="3.5" fill="#1C2340"/>
+
+          <!-- reflexo do vidro -->
+          <g clip-path="url(#recorte-mostrador)">
+            <path d="M94 250 C110 170 190 128 292 134 C230 160 170 200 144 300 C118 300 100 280 94 250 Z" fill="url(#vidro)"/>
+          </g>
+          <circle cx="260" cy="310" r="166" fill="none" stroke="#1C2340" stroke-opacity="0.25" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <dl class="readout">
+          <div class="readout__item">
+            <dt class="readout__label">Faltam para a meia-noite</dt>
+            <dd class="readout__value">
+              <span class="readout__num">6</span><span class="readout__unit">min</span>
+              <span class="readout__num">09</span><span class="readout__unit">s</span>
+            </dd>
+            <dd class="readout__note"><span class="chip chip--closer">▲ 33 s mais perto</span> nos últimos 7 dias</dd>
+          </div>
+          <div class="readout__item">
+            <dt class="readout__label">Janela provável de estouro</dt>
+            <dd class="readout__value">
+              <span class="readout__num">12 a 24</span><span class="readout__unit">meses</span>
+            </dd>
+            <dd class="readout__note">Confiança média. É uma estimativa, não uma previsão exata.</dd>
+          </div>
+          <div class="readout__item">
+            <dt class="readout__label">Índice de risco</dt>
+            <dd class="readout__value">
+              <span class="readout__num">59</span><span class="readout__unit">de 100</span>
+            </dd>
+            <dd class="readout__note">Atualizado em <time datetime="2026-10-23T06:00-03:00">23 out 2026, 06:00</time></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="termometros" aria-labelledby="termometros-titulo">
+      <div class="container">
+        <h2 id="termometros-titulo" class="section__title">O que está movendo o ponteiro</h2>
+        <p class="section__lead">Seis termômetros somam o índice. Cada um tem um peso e uma nota de risco, de 0 a 100.</p>
+
+        <ul class="gauges">
+          <li class="gauge gauge--high">
+            <div class="gauge__name">Investimento contra receita<span class="gauge__weight">peso 25%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 74 de 100"><span class="gauge__fill" style="--value: 74%"></span></div>
+            <div class="gauge__score"><strong>74</strong><span class="gauge__delta">+3 na semana</span></div>
+          </li>
+          <li class="gauge gauge--high">
+            <div class="gauge__name">Valuations e concentração<span class="gauge__weight">peso 20%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 66 de 100"><span class="gauge__fill" style="--value: 66%"></span></div>
+            <div class="gauge__score"><strong>66</strong><span class="gauge__delta">+2 na semana</span></div>
+          </li>
+          <li class="gauge gauge--high">
+            <div class="gauge__name">Financiamento e crédito<span class="gauge__weight">peso 20%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 61 de 100"><span class="gauge__fill" style="--value: 61%"></span></div>
+            <div class="gauge__score"><strong>61</strong><span class="gauge__delta">+4 na semana</span></div>
+          </li>
+          <li class="gauge gauge--mid">
+            <div class="gauge__name">Geopolítica e regulação<span class="gauge__weight">peso 10%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 52 de 100"><span class="gauge__fill" style="--value: 52%"></span></div>
+            <div class="gauge__score"><strong>52</strong><span class="gauge__delta">sem mudança</span></div>
+          </li>
+          <li class="gauge gauge--low">
+            <div class="gauge__name">Tecnologia e custos<span class="gauge__weight">peso 10%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 40 de 100"><span class="gauge__fill" style="--value: 40%"></span></div>
+            <div class="gauge__score"><strong>40</strong><span class="gauge__delta">−2 na semana</span></div>
+          </li>
+          <li class="gauge gauge--low">
+            <div class="gauge__name">Demanda real e adoção<span class="gauge__weight">peso 15%</span></div>
+            <div class="gauge__bar" role="img" aria-label="Risco 38 de 100"><span class="gauge__fill" style="--value: 38%"></span></div>
+            <div class="gauge__score"><strong>38</strong><span class="gauge__delta">−3 na semana</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="diario" aria-labelledby="diario-titulo">
+      <div class="container">
+        <h2 id="diario-titulo" class="section__title">Diário da bolha</h2>
+        <p class="section__lead">Cada notícia analisada, da mais recente para a mais antiga, com o quanto moveu o ponteiro.</p>
+
+        <div class="filters" role="group" aria-label="Filtrar notícias">
+          <button class="filters__btn" type="button" data-filter="all" aria-pressed="true">Todas</button>
+          <button class="filters__btn" type="button" data-filter="closer" aria-pressed="false">Aproximam</button>
+          <button class="filters__btn" type="button" data-filter="farther" aria-pressed="false">Afastam</button>
+        </div>
+
+        <ol class="timeline">
+          <li class="entry" data-effect="closer">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-22">22 out 2026</time>
+              <span class="entry__source">Jornal de negócios (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Empresas anunciam ciclo de investimento em data centers acima do previsto</h3>
+            <p class="entry__summary">O gasto planejado supera em cerca de 30% a receita de IA reportada no mesmo período, o que alarga o descompasso entre custo e retorno.</p>
+            <div class="entry__meta">
+              <span class="chip chip--closer">▲ 18 s mais perto</span>
+              <span class="entry__tag">Investimento contra receita</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+
+          <li class="entry" data-effect="farther">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-21">21 out 2026</time>
+              <span class="entry__source">Portal de tecnologia (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Pesquisa com empresas mostra alta de contratos pagos de assistentes de IA</h3>
+            <p class="entry__summary">A taxa de renovação ficou estável e o número de licenças por cliente cresceu, sinal de uso recorrente e não só de teste.</p>
+            <div class="entry__meta">
+              <span class="chip chip--farther">▼ 9 s mais longe</span>
+              <span class="entry__tag">Demanda real e adoção</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+
+          <li class="entry" data-effect="closer">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-20">20 out 2026</time>
+              <span class="entry__source">Agência financeira (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Fundo de crédito privado amplia exposição a dívida de data centers</h3>
+            <p class="entry__summary">Parte do financiamento passa a depender de contratos entre empresas do mesmo setor, o que concentra o risco em poucos nomes.</p>
+            <div class="entry__meta">
+              <span class="chip chip--closer">▲ 24 s mais perto</span>
+              <span class="entry__tag">Financiamento e crédito</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+
+          <li class="entry" data-effect="neutral">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-18">18 out 2026</time>
+              <span class="entry__source">Revista de política (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Governo discute novas regras para exportação de chips avançados</h3>
+            <p class="entry__summary">A proposta ainda está em consulta e não muda prazos de entrega neste trimestre. A IA classificou o efeito como nulo por ora.</p>
+            <div class="entry__meta">
+              <span class="chip chip--neutral">= Sem efeito</span>
+              <span class="entry__tag">Geopolítica e regulação</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+
+          <li class="entry" data-effect="farther">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-16">16 out 2026</time>
+              <span class="entry__source">Portal de tecnologia (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Novo modelo reduz o custo de inferência pela metade</h3>
+            <p class="entry__summary">Menos custo por resposta melhora a margem de quem vende IA e adia a pressão por mais capacidade de computação.</p>
+            <div class="entry__meta">
+              <span class="chip chip--farther">▼ 14 s mais longe</span>
+              <span class="entry__tag">Tecnologia e custos</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+
+          <li class="entry" data-effect="closer">
+            <div class="entry__head">
+              <time class="entry__date" datetime="2026-10-14">14 out 2026</time>
+              <span class="entry__source">Agência financeira (exemplo)</span>
+            </div>
+            <h3 class="entry__title">Cinco maiores empresas atingem peso recorde no índice de ações</h3>
+            <p class="entry__summary">A concentração em poucos nomes ligados a IA deixa o mercado mais exposto a uma correção em qualquer um deles.</p>
+            <div class="entry__meta">
+              <span class="chip chip--closer">▲ 11 s mais perto</span>
+              <span class="entry__tag">Valuations e concentração</span>
+              <a class="entry__link" href="#diario">Ler a matéria original</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="metodo" aria-labelledby="metodo-titulo">
+      <div class="container container--narrow">
+        <h2 id="metodo-titulo" class="section__title">Como o relógio é calculado</h2>
+        <ol class="steps">
+          <li><strong>Coleta.</strong> Todo dia às 06:00, o sistema lê feeds RSS e a base GDELT de fontes de economia, tecnologia e geopolítica.</li>
+          <li><strong>Classificação.</strong> A IA lê cada notícia, escolhe o termômetro afetado e dá uma nota de impacto com a justificativa.</li>
+          <li><strong>Índice.</strong> As notas viram um índice de 0 a 100, ponderado pelos pesos acima.</li>
+          <li><strong>Ponteiro.</strong> Os minutos até a meia-noite são 15 × (1 − índice ÷ 100). Índice 59 equivale a 6 min 09 s.</li>
+        </ol>
+        <p class="disclaimer">O relógio é um indicador simbólico, feito por IA. Não é recomendação de investimento nem previsão exata.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Relógio da Salvação. Inspirado no Relógio do Fim do Mundo.</p>
+    </div>
+  </footer>
+
+  <script src="mockup.js"></script>
+</body>
+</html>

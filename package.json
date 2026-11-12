@@ -1,0 +1,23 @@
+{
+  "name": "relogio-da-salvacao",
+  "version": "0.2.0",
+  "description": "Relógio que mede quanto falta para a bolha da IA estourar.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "dev": "node scripts/serve-static.mjs public 5174",
+    "pipeline": "node --env-file-if-exists=.env pipeline/index.js",
+    "pipeline:dry": "node --env-file-if-exists=.env pipeline/index.js --dry-run",
+    "pipeline:export": "node --env-file-if-exists=.env pipeline/index.js --export-candidates",
+    "pipeline:reclassify": "node --env-file-if-exists=.env pipeline/index.js --export-candidates --reclassify",
+    "pipeline:apply": "node --env-file-if-exists=.env pipeline/index.js --classifier=file",
+    "test": "node --test \"tests/**/*.test.js\""
+  },
+  "dependencies": {
+    "@google/genai": "2.31.0",
+    "fast-xml-parser": "5.11.2"
+  }
+}

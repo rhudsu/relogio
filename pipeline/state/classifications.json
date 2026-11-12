@@ -1,0 +1,226 @@
+[
+  {
+    "id": "133de684dfb6",
+    "relevant": false
+  },
+  {
+    "id": "9caa9b54c504",
+    "relevant": false
+  },
+  {
+    "id": "721d458077e8",
+    "relevant": false
+  },
+  {
+    "id": "9b6cbbc69269",
+    "relevant": false
+  },
+  {
+    "id": "931e3313f33e",
+    "relevant": false
+  },
+  {
+    "id": "29dc3ada50a4",
+    "relevant": false
+  },
+  {
+    "id": "daaeaa9f86a3",
+    "relevant": false
+  },
+  {
+    "id": "b34093d38dcd",
+    "relevant": false
+  },
+  {
+    "id": "e7f7cb7c5712",
+    "relevant": false
+  },
+  {
+    "id": "8233129c4cd1",
+    "relevant": false
+  },
+  {
+    "id": "5bec18d62b53",
+    "relevant": false
+  },
+  {
+    "id": "ed37d32e2c4a",
+    "relevant": false
+  },
+  {
+    "id": "e460234c4fe4",
+    "relevant": false
+  },
+  {
+    "id": "506a7d7aad4b",
+    "relevant": false
+  },
+  {
+    "id": "46f375beb9f1",
+    "relevant": false
+  },
+  {
+    "id": "ebc96c3f5b6c",
+    "relevant": false
+  },
+  {
+    "id": "c1a8be3a6f4b",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.55,
+    "evidence": "reportagem",
+    "titlePt": "Ações da Nvidia despencam com investigação sobre caso do CEO",
+    "summaryPt": "A queda eliminou centenas de bilhões de dólares do valor da empresa na segunda-feira.",
+    "rationale": "Queda forte na líder do setor, com origem em governança."
+  },
+  {
+    "id": "3b947fd5e4d9",
+    "relevant": false
+  },
+  {
+    "id": "0b80c5851be9",
+    "relevant": false
+  },
+  {
+    "id": "6d5898c96ffa",
+    "relevant": false
+  },
+  {
+    "id": "2f74281a7706",
+    "relevant": true,
+    "gaugeId": "financing",
+    "direction": "farther",
+    "magnitude": 1,
+    "confidence": 0.5,
+    "evidence": "opiniao",
+    "titlePt": "CEO do Goldman diz que financiamento de IA segue forte apesar da instabilidade",
+    "summaryPt": "David Solomon afirma que o apetite por infraestrutura de IA continua alto, mesmo após o ajuste nas ações.",
+    "rationale": "Declaração de executivo, sem dado novo."
+  },
+  {
+    "id": "de6c408987a1",
+    "relevant": false
+  },
+  {
+    "id": "ba436dfdc0d3",
+    "relevant": false
+  },
+  {
+    "id": "45c537ea2364",
+    "relevant": false
+  },
+  {
+    "id": "00308dd471de",
+    "relevant": false
+  },
+  {
+    "id": "e0debfd78bd9",
+    "relevant": false
+  },
+  {
+    "id": "5f3b22b98f31",
+    "relevant": false
+  },
+  {
+    "id": "eda661cf2b57",
+    "relevant": false
+  },
+  {
+    "id": "84ab0fe30f78",
+    "relevant": false
+  },
+  {
+    "id": "e3579c983ecd",
+    "relevant": false
+  },
+  {
+    "id": "74d402edeb4e",
+    "relevant": false
+  },
+  {
+    "id": "c84602d14944",
+    "relevant": false
+  },
+  {
+    "id": "252d863080dc",
+    "relevant": false
+  },
+  {
+    "id": "a92ed438d1e8",
+    "relevant": true,
+    "gaugeId": "capex",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.55,
+    "evidence": "dado",
+    "titlePt": "Anthropic fecha acordo de US$ 3,4 bi para comprar geradores a gás para data centers",
+    "summaryPt": "O contrato de grande porte busca garantir energia própria para a expansão de capacidade.",
+    "rationale": "Compromisso de capital grande e indivisível em infraestrutura."
+  },
+  {
+    "id": "f22d837c2d1d",
+    "relevant": false
+  },
+  {
+    "id": "33b7317daa96",
+    "relevant": false
+  },
+  {
+    "id": "d5d4be47c640",
+    "relevant": false
+  },
+  {
+    "id": "4993b0cae8b8",
+    "relevant": false
+  },
+  {
+    "id": "e2e879d579b2",
+    "relevant": false
+  },
+  {
+    "id": "9c5da62bab37",
+    "relevant": true,
+    "gaugeId": "financing",
+    "direction": "closer",
+    "magnitude": 3,
+    "confidence": 0.75,
+    "evidence": "dado",
+    "titlePt": "O 'cartão de crédito' da IA fica mais caro: títulos da CoreWeave rendem mais de 16%",
+    "summaryPt": "Os juros exigidos pela dívida da CoreWeave refletem o estresse no mercado de crédito da IA, com investidores preocupados com a desaceleração dos data centers.",
+    "rationale": "Custo de dívida de 16% é sinal direto de aperto de crédito no setor."
+  },
+  {
+    "id": "9e48d33c9065",
+    "relevant": true,
+    "gaugeId": "sentiment",
+    "direction": "farther",
+    "magnitude": 1,
+    "confidence": 0.5,
+    "evidence": "reportagem",
+    "titlePt": "Reações negativas à IA podem atrasar IPO da Anthropic, dizem potenciais investidores",
+    "summaryPt": "Investidores levantam dúvidas sobre o momento da abertura de capital.",
+    "rationale": "Esfriamento da demanda por IPO reduz a euforia."
+  },
+  {
+    "id": "fe091488ebe1",
+    "relevant": false
+  },
+  {
+    "id": "4a341634cecd",
+    "relevant": true,
+    "gaugeId": "capex",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.5,
+    "evidence": "reportagem",
+    "titlePt": "Oferta de demissão voluntária da Microsoft deixa funcionários em alerta",
+    "summaryPt": "Enquanto investe bilhões em IA, a empresa ofereceu acordos de saída a cerca de 60 mil funcionários.",
+    "rationale": "Corte de custos para financiar o gasto em IA sugere pressão sobre o retorno."
+  },
+  {
+    "id": "2e9fef7bbd79",
+    "relevant": false
+  }
+]

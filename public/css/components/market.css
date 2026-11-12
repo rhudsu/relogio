@@ -1,0 +1,27 @@
+.market {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-3);
+}
+
+.market > * {
+  padding: var(--espaco-3);
+  background: var(--noite-800);
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+}
+
+.market > [hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .market {
+    grid-template-columns: 1fr;
+  }
+
+  .market > * {
+    padding: var(--espaco-2);
+  }
+}

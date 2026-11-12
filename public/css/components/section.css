@@ -1,0 +1,26 @@
+.section {
+  padding-block: var(--espaco-5) 0;
+}
+
+.section:last-of-type {
+  padding-bottom: var(--espaco-5);
+}
+
+.section__title {
+  margin: 0 0 var(--espaco-1);
+  font-family: var(--fonte-interface);
+  font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.section__lead a {
+  color: var(--esmalte);
+  text-underline-offset: 3px;
+}
+
+.section__lead {
+  max-width: 60ch;
+  margin: 0 0 var(--espaco-4);
+  color: var(--texto-suave);
+}
