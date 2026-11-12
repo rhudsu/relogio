@@ -68,9 +68,9 @@ export const SETTINGS = {
     minArticlesForMedium: 10,
   },
   publication: {
-    entriesWindowDays: 60,
-    maxEntries: 150,
-    historyDays: 60,
+    entriesWindowDays: 120,
+    maxEntries: 400,
+    historyDays: 120,
   },
   weeklySummary: {
     maxChars: 500,

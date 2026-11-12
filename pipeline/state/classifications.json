@@ -1,226 +1,238 @@
 [
   {
-    "id": "133de684dfb6",
+    "id": "cb8f4eb40321",
     "relevant": false
   },
   {
-    "id": "9caa9b54c504",
+    "id": "72bf0a9d0e49",
     "relevant": false
   },
   {
-    "id": "721d458077e8",
-    "relevant": false
-  },
-  {
-    "id": "9b6cbbc69269",
-    "relevant": false
-  },
-  {
-    "id": "931e3313f33e",
-    "relevant": false
-  },
-  {
-    "id": "29dc3ada50a4",
-    "relevant": false
-  },
-  {
-    "id": "daaeaa9f86a3",
-    "relevant": false
-  },
-  {
-    "id": "b34093d38dcd",
-    "relevant": false
-  },
-  {
-    "id": "e7f7cb7c5712",
-    "relevant": false
-  },
-  {
-    "id": "8233129c4cd1",
-    "relevant": false
-  },
-  {
-    "id": "5bec18d62b53",
-    "relevant": false
-  },
-  {
-    "id": "ed37d32e2c4a",
-    "relevant": false
-  },
-  {
-    "id": "e460234c4fe4",
-    "relevant": false
-  },
-  {
-    "id": "506a7d7aad4b",
-    "relevant": false
-  },
-  {
-    "id": "46f375beb9f1",
-    "relevant": false
-  },
-  {
-    "id": "ebc96c3f5b6c",
-    "relevant": false
-  },
-  {
-    "id": "c1a8be3a6f4b",
+    "id": "5e97f2194ae2",
     "relevant": true,
     "gaugeId": "valuations",
     "direction": "closer",
     "magnitude": 2,
     "confidence": 0.55,
     "evidence": "reportagem",
-    "titlePt": "Ações da Nvidia despencam com investigação sobre caso do CEO",
-    "summaryPt": "A queda eliminou centenas de bilhões de dólares do valor da empresa na segunda-feira.",
-    "rationale": "Queda forte na líder do setor, com origem em governança."
+    "titlePt": "Ações de tecnologia dos EUA caem com preocupação sobre gastos em IA",
+    "summaryPt": "As ações de tecnologia recuaram com investidores preocupados com o retorno dos gastos em IA.",
+    "rationale": "Queda da bolsa ligada ao retorno do investimento em IA."
   },
   {
-    "id": "3b947fd5e4d9",
-    "relevant": false
-  },
-  {
-    "id": "0b80c5851be9",
-    "relevant": false
-  },
-  {
-    "id": "6d5898c96ffa",
-    "relevant": false
-  },
-  {
-    "id": "2f74281a7706",
+    "id": "14d6ff8ac309",
     "relevant": true,
-    "gaugeId": "financing",
+    "gaugeId": "demand",
     "direction": "farther",
+    "magnitude": 2,
+    "confidence": 0.7,
+    "evidence": "dado",
+    "titlePt": "TSMC diz que demanda por IA ainda supera sua capacidade e tem lucro recorde",
+    "summaryPt": "A receita do terceiro trimestre foi de cerca de US$ 46,7 bi (+41%). A empresa manteve o investimento de 2026 em US$ 60 a 64 bi, e as ações recuaram com foco em margens e gastos.",
+    "rationale": "Dado de demanda na cadeia de chips."
+  },
+  {
+    "id": "7ee501b67e5c",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
     "magnitude": 1,
     "confidence": 0.5,
-    "evidence": "opiniao",
-    "titlePt": "CEO do Goldman diz que financiamento de IA segue forte apesar da instabilidade",
-    "summaryPt": "David Solomon afirma que o apetite por infraestrutura de IA continua alto, mesmo após o ajuste nas ações.",
-    "rationale": "Declaração de executivo, sem dado novo."
-  },
-  {
-    "id": "de6c408987a1",
-    "relevant": false
-  },
-  {
-    "id": "ba436dfdc0d3",
-    "relevant": false
-  },
-  {
-    "id": "45c537ea2364",
-    "relevant": false
-  },
-  {
-    "id": "00308dd471de",
-    "relevant": false
-  },
-  {
-    "id": "e0debfd78bd9",
-    "relevant": false
-  },
-  {
-    "id": "5f3b22b98f31",
-    "relevant": false
-  },
-  {
-    "id": "eda661cf2b57",
-    "relevant": false
-  },
-  {
-    "id": "84ab0fe30f78",
-    "relevant": false
-  },
-  {
-    "id": "e3579c983ecd",
-    "relevant": false
-  },
-  {
-    "id": "74d402edeb4e",
-    "relevant": false
-  },
-  {
-    "id": "c84602d14944",
-    "relevant": false
-  },
-  {
-    "id": "252d863080dc",
-    "relevant": false
-  },
-  {
-    "id": "a92ed438d1e8",
-    "relevant": true,
-    "gaugeId": "capex",
-    "direction": "closer",
-    "magnitude": 2,
-    "confidence": 0.55,
     "evidence": "dado",
-    "titlePt": "Anthropic fecha acordo de US$ 3,4 bi para comprar geradores a gás para data centers",
-    "summaryPt": "O contrato de grande porte busca garantir energia própria para a expansão de capacidade.",
-    "rationale": "Compromisso de capital grande e indivisível em infraestrutura."
+    "titlePt": "Nasdaq fecha em máxima, mas com poucos papéis subindo",
+    "summaryPt": "O índice fechou em 27.477 pontos, com 243 novas mínimas contra 57 novas máximas.",
+    "rationale": "Máxima do índice com participação estreita é sinal de fragilidade."
   },
   {
-    "id": "f22d837c2d1d",
-    "relevant": false
+    "id": "da1089d45857",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 1,
+    "confidence": 0.5,
+    "evidence": "reportagem",
+    "titlePt": "Nvidia chega perto de nova máxima com recompra de US$ 150 bi",
+    "summaryPt": "A ação bateu máxima em 2 de outubro, depois de uma queda de dois meses que tinha apagado mais de US$ 1 tri do valor da empresa.",
+    "rationale": "Recuperação da líder do setor sustentada por recompra."
   },
   {
-    "id": "33b7317daa96",
-    "relevant": false
-  },
-  {
-    "id": "d5d4be47c640",
-    "relevant": false
-  },
-  {
-    "id": "4993b0cae8b8",
-    "relevant": false
-  },
-  {
-    "id": "e2e879d579b2",
-    "relevant": false
-  },
-  {
-    "id": "9c5da62bab37",
+    "id": "e7b0e6491b9d",
     "relevant": true,
     "gaugeId": "financing",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.5,
+    "evidence": "reportagem",
+    "titlePt": "Dívida das big techs para a IA deve bater novo recorde",
+    "summaryPt": "A emissão de dívida das grandes empresas de tecnologia para financiar a IA deve atingir um novo marco.",
+    "rationale": "Alavancagem crescente de quem financia o investimento."
+  },
+  {
+    "id": "2ad2e7e8cb4a",
+    "relevant": true,
+    "gaugeId": "macro",
+    "direction": "closer",
+    "magnitude": 3,
+    "confidence": 0.8,
+    "evidence": "dado",
+    "titlePt": "Fed sobe os juros para 3,75% a 4,00% e investidores olham a desaceleração da IA",
+    "summaryPt": "É a primeira alta desde 2023, e 16 de 18 dirigentes projetam ao menos mais uma alta neste ano.",
+    "rationale": "Aperto monetário é o gatilho clássico de estouro de bolhas."
+  },
+  {
+    "id": "c302377cbf94",
+    "relevant": true,
+    "gaugeId": "macro",
     "direction": "closer",
     "magnitude": 3,
     "confidence": 0.75,
     "evidence": "dado",
-    "titlePt": "O 'cartão de crédito' da IA fica mais caro: títulos da CoreWeave rendem mais de 16%",
-    "summaryPt": "Os juros exigidos pela dívida da CoreWeave refletem o estresse no mercado de crédito da IA, com investidores preocupados com a desaceleração dos data centers.",
-    "rationale": "Custo de dívida de 16% é sinal direto de aperto de crédito no setor."
+    "titlePt": "Juros dos EUA a 10 anos tocam 5%, o maior nível desde 2007",
+    "summaryPt": "O rendimento do título de 10 anos chegou perto de 5,01%, pressionando ações de crescimento e de IA.",
+    "rationale": "Juros longos altos encarecem o capital e reduzem o valor presente do setor."
   },
   {
-    "id": "9e48d33c9065",
-    "relevant": true,
-    "gaugeId": "sentiment",
-    "direction": "farther",
-    "magnitude": 1,
-    "confidence": 0.5,
-    "evidence": "reportagem",
-    "titlePt": "Reações negativas à IA podem atrasar IPO da Anthropic, dizem potenciais investidores",
-    "summaryPt": "Investidores levantam dúvidas sobre o momento da abertura de capital.",
-    "rationale": "Esfriamento da demanda por IPO reduz a euforia."
-  },
-  {
-    "id": "fe091488ebe1",
-    "relevant": false
-  },
-  {
-    "id": "4a341634cecd",
+    "id": "3ffdfa93e5c7",
     "relevant": true,
     "gaugeId": "capex",
     "direction": "closer",
-    "magnitude": 2,
-    "confidence": 0.5,
-    "evidence": "reportagem",
-    "titlePt": "Oferta de demissão voluntária da Microsoft deixa funcionários em alerta",
-    "summaryPt": "Enquanto investe bilhões em IA, a empresa ofereceu acordos de saída a cerca de 60 mil funcionários.",
-    "rationale": "Corte de custos para financiar o gasto em IA sugere pressão sobre o retorno."
+    "magnitude": 3,
+    "confidence": 0.7,
+    "evidence": "dado",
+    "titlePt": "Oracle tem receita 30% maior, mas fluxo de caixa livre negativo em US$ 5 bi",
+    "summaryPt": "A carteira de contratos chegou a cerca de US$ 664 bi. O investimento do trimestre foi de US$ 28 bi, e a empresa levantou US$ 20 bi vendendo ações no mercado.",
+    "rationale": "Gasto muito acima da geração de caixa, financiado com dívida e ações."
   },
   {
-    "id": "2e9fef7bbd79",
-    "relevant": false
+    "id": "0fcb6f2d035f",
+    "relevant": true,
+    "gaugeId": "financing",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.55,
+    "evidence": "reportagem",
+    "titlePt": "Amazon capta £ 4,25 bi em estreia no mercado de títulos em libras",
+    "summaryPt": "Os pedidos passaram de £ 10,65 bi. As grandes empresas de tecnologia seguem recorrendo ao mercado de dívida para financiar a infraestrutura de IA.",
+    "rationale": "Endividamento crescente das hyperscalers para financiar o investimento."
+  },
+  {
+    "id": "9952e7692f15",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 1,
+    "confidence": 0.4,
+    "evidence": "reportagem",
+    "titlePt": "Ação da Marvell cai apesar de balanço e projeção fortes",
+    "summaryPt": "A Marvell elevou as projeções de receita, mas as ações caíram mais de 7% após o pregão, depois de subir mais de 40% desde o fim de julho.",
+    "rationale": "Expectativas muito altas já embutidas no preço."
+  },
+  {
+    "id": "b7a359f1a9a7",
+    "relevant": true,
+    "gaugeId": "demand",
+    "direction": "farther",
+    "magnitude": 2,
+    "confidence": 0.7,
+    "evidence": "dado",
+    "titlePt": "Nvidia supera previsões e eleva projeção, mas ação cai 1%",
+    "summaryPt": "A receita do segundo trimestre fiscal foi de US$ 96,2 bi (+106%), contra US$ 92,3 bi esperados. A projeção para o próximo é de US$ 108 bi, sem contar receita de data center na China.",
+    "rationale": "Resultado da líder do setor com demanda acima do esperado."
+  },
+  {
+    "id": "2dfe4b3ce851",
+    "relevant": true,
+    "gaugeId": "macro",
+    "direction": "closer",
+    "magnitude": 1,
+    "confidence": 0.45,
+    "evidence": "opiniao",
+    "titlePt": "Proibir data centers de IA foi longe demais?",
+    "summaryPt": "A oposição por causa da conta de luz se espalha: Nova York teria imposto moratória estadual em meados de julho e a Virgínia avalia revogar benefício fiscal.",
+    "rationale": "Risco regulatório local sobre o investimento em infraestrutura, em texto de opinião."
+  },
+  {
+    "id": "bad2500b0e52",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 1,
+    "confidence": 0.4,
+    "evidence": "reportagem",
+    "titlePt": "Micron e MongoDB afundam e chips de IA caem antes do balanço da Nvidia",
+    "summaryPt": "O índice de semicondutores perdeu 2,67% na segunda-feira.",
+    "rationale": "Queda pontual em chips de IA."
+  },
+  {
+    "id": "5de56a056464",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 1,
+    "confidence": 0.45,
+    "evidence": "reportagem",
+    "titlePt": "Venda de ações de IA derruba bolsas pelo mundo",
+    "summaryPt": "As bolsas caíram em 19 de agosto com forte venda de papéis ligados à IA. O S&P 500 perdeu cerca de 0,7%.",
+    "rationale": "Queda pontual em ações de IA."
+  },
+  {
+    "id": "7ac5ce81094e",
+    "relevant": true,
+    "gaugeId": "demand",
+    "direction": "farther",
+    "magnitude": 2,
+    "confidence": 0.6,
+    "evidence": "reportagem",
+    "titlePt": "Receita anualizada da Anthropic chega a US$ 65 bi, segundo a Bloomberg",
+    "summaryPt": "Ao fim de julho, a taxa anualizada da Anthropic era de cerca de US$ 65 bi, contra US$ 47 bi em maio. A da OpenAI passava de US$ 40 bi. As empresas podem calcular o indicador de formas diferentes.",
+    "rationale": "Crescimento rápido de receita reduz a distância entre gasto e retorno."
+  },
+  {
+    "id": "2f26450c3159",
+    "relevant": true,
+    "gaugeId": "financing",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.65,
+    "evidence": "dado",
+    "titlePt": "CoreWeave tem receita 112% maior, mas prejuízo de US$ 626 mi e juros de US$ 640 mi",
+    "summaryPt": "O investimento do trimestre foi de US$ 9,4 bi e a projeção do ano subiu para US$ 35 a 39 bi. A carteira de contratos chega a cerca de US$ 104 bi.",
+    "rationale": "Juros crescendo mais que a receita indicam alavancagem alta."
+  },
+  {
+    "id": "6fd0df65abc2",
+    "relevant": true,
+    "gaugeId": "financing",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.6,
+    "evidence": "reportagem",
+    "titlePt": "SoftBank tem lucro 18% menor, sem ganho com a OpenAI, e prepara empréstimo com ações da OpenAI como garantia",
+    "summaryPt": "A participação na OpenAI não gerou ganho no trimestre, contra cerca de US$ 20 bi no anterior. A SoftBank planeja mais US$ 10 bi na OpenAI em outubro, e o Vision Fund 2 deve tomar US$ 10 bi dando ações da OpenAI como garantia.",
+    "rationale": "Financiamento do setor depende de crédito lastreado em ações de empresas privadas."
+  },
+  {
+    "id": "cd0c7a27f7b5",
+    "relevant": true,
+    "gaugeId": "demand",
+    "direction": "farther",
+    "magnitude": 1,
+    "confidence": 0.55,
+    "evidence": "dado",
+    "titlePt": "Palantir tem receita 93% maior no trimestre e eleva projeção do ano",
+    "summaryPt": "A receita do segundo trimestre subiu a US$ 1,94 bi e o lucro ajustado por ação cresceu 156%.",
+    "rationale": "Resultado forte sustenta a demanda por software de IA."
+  },
+  {
+    "id": "29c0318af657",
+    "relevant": true,
+    "gaugeId": "valuations",
+    "direction": "closer",
+    "magnitude": 2,
+    "confidence": 0.55,
+    "evidence": "reportagem",
+    "titlePt": "Por que as ações das neoclouds ligadas à Nvidia estão despencando",
+    "summaryPt": "CoreWeave, Nebius e IREN caíram forte com custos maiores de servidores, memória e chips e nova concorrência. A IREN está 47% abaixo do pico do ano e a CoreWeave tem 27% das ações vendidas a descoberto.",
+    "rationale": "Queda forte em empresas alavancadas do elo mais frágil da cadeia de IA."
   }
 ]

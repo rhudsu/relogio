@@ -58,3 +58,12 @@ Enquanto a automação com o Gemini não estiver ligada (a organização bloquei
 - `npm run pipeline:dry` mostra o que seria coletado, sem gravar.
 - `npm run pipeline:export` / `pipeline:apply` são os passos 1 e 4.
 - Limites e janelas: `pipeline/config/settings.js` (`weeklySummary`, `publication.historyDays`, `priceSignal`).
+
+## Retrospectiva (buscar notícias mais antigas)
+O RSS só alcança cerca de 30 dias e o GDELT costuma bloquear (HTTP 429). Para voltar mais no tempo:
+1. Pesquise na web, com consultas específicas de data e empresa (ex.: "Nvidia second-quarter fiscal 2027 results", "Fed rate decision September 2026"). Use só o que a pesquisa confirmar, com URL, data e um trecho fiel. Descarte fontes frágeis e confira se o resultado não é de 2025.
+2. Grave os itens em `pipeline/state/extra-articles.json` (`publishedAt`, `source`, `url`, `title`, `snippet`). Eles entram como origem `manual`, sem passar pelo filtro de palavras-chave.
+3. Rode `node --env-file-if-exists=.env pipeline/index.js --export-candidates --backfill-from=AAAA-MM-DD` (amplia a janela de coleta) e depois classifique como nos passos normais.
+4. Publique com `node --env-file-if-exists=.env pipeline/index.js --classifier=file --backfill-from=AAAA-MM-DD`. Sem `--backfill-from` a janela volta a 30 dias.
+5. `--backfill-gdelt` também tenta o GDELT em janelas de 10 dias, quando ele não estiver bloqueando.
+O histórico do gráfico cobre `publication.historyDays` (120 dias).

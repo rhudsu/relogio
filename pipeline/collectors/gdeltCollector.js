@@ -5,14 +5,24 @@ const GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc";
 const SEEN_DATE_PATTERN = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z$/;
 const ERROR_PREVIEW_CHARS = 120;
 
-export function buildGdeltUrl(query, { maxRecords, timespan }) {
+// Com start e end (datas ISO), consulta uma janela histórica; sem eles, usa o timespan relativo.
+function toGdeltDateTime(isoDate) {
+  return new Date(isoDate).toISOString().replace(/[-:T]/g, "").slice(0, 14);
+}
+
+export function buildGdeltUrl(query, { maxRecords, timespan, start, end }) {
   const url = new URL(GDELT_ENDPOINT);
 
   url.searchParams.set("query", query);
   url.searchParams.set("mode", "artlist");
   url.searchParams.set("format", "json");
   url.searchParams.set("maxrecords", String(maxRecords));
-  url.searchParams.set("timespan", timespan);
+  if (start && end) {
+    url.searchParams.set("startdatetime", toGdeltDateTime(start));
+    url.searchParams.set("enddatetime", toGdeltDateTime(end));
+  } else {
+    url.searchParams.set("timespan", timespan);
+  }
   url.searchParams.set("sort", "datedesc");
 
   return url.toString();
@@ -42,8 +52,8 @@ export function parseGdeltResponse(text) {
   }));
 }
 
-export async function collectGdeltQuery(query, { fetchFn, timeoutMs, userAgent, maxRecords, timespan }) {
-  const text = await fetchText(buildGdeltUrl(query.query, { maxRecords, timespan }), {
+export async function collectGdeltQuery(query, { fetchFn, timeoutMs, userAgent, maxRecords, timespan, start, end }) {
+  const text = await fetchText(buildGdeltUrl(query.query, { maxRecords, timespan, start, end }), {
     fetchFn,
     timeoutMs,
     userAgent,

@@ -1,1 +1,149 @@
-[]
+[
+  {
+    "id": "cb8f4eb40321",
+    "source": "Financial Times (tecnologia)",
+    "publishedAt": "2026-11-12T04:19:48.000Z",
+    "title": "State dinners to scrutiny: Nvidia’s Huang falls out of favour in Trump’s Washington",
+    "snippet": "AI kingmaker’s opponents see ‘blood in the water’ after affair with suspected Chinese spy"
+  },
+  {
+    "id": "72bf0a9d0e49",
+    "source": "Financial Times (tecnologia)",
+    "publishedAt": "2026-11-12T03:39:25.000Z",
+    "title": "Nvidia shares tumble in after-market trading",
+    "snippet": "Stock sinks almost 9 per cent in after-market trading as chief executive’s fate hangs in balance following more revelations"
+  },
+  {
+    "id": "5e97f2194ae2",
+    "source": "Al Jazeera",
+    "publishedAt": "2026-10-23T12:00:00.000Z",
+    "title": "US tech stocks tumble as investors fret over AI spending",
+    "snippet": "US tech shares fell as investors worried about the returns on AI spending."
+  },
+  {
+    "id": "14d6ff8ac309",
+    "source": "LetsDataScience",
+    "publishedAt": "2026-10-15T12:00:00.000Z",
+    "title": "TSMC says AI demand still exceeds its supply capability as Q3 profit reaches a record",
+    "snippet": "TSMC's third-quarter revenue was about $46.7 billion, up 41%, with record net income. It held its 2026 capex at $60-64 billion; shares slipped as investors focused on margins and spending."
+  },
+  {
+    "id": "7ee501b67e5c",
+    "source": "Honolulu Star-Advertiser (Reuters)",
+    "publishedAt": "2026-10-05T12:00:00.000Z",
+    "title": "Nasdaq notches record high close as investors focus on earnings",
+    "snippet": "The Nasdaq closed at a record 27,477.31 helped by Nvidia and Microsoft, though breadth was weak: 243 new lows against 57 new highs."
+  },
+  {
+    "id": "da1089d45857",
+    "source": "Business Today",
+    "publishedAt": "2026-10-03T12:00:00.000Z",
+    "title": "Nvidia shares approach record high as AI optimism revives investor demand",
+    "snippet": "Nvidia hit a record near $237.75 on October 2, helped by an expanded $150 billion buyback, after a two-month selloff that had erased more than $1 trillion of its market value."
+  },
+  {
+    "id": "e7b0e6491b9d",
+    "source": "Bizpacreview",
+    "publishedAt": "2026-09-22T12:00:00.000Z",
+    "title": "Big Tech's AI debt binge set to hit new eye-popping milestone",
+    "snippet": "Big Tech's debt issuance to fund AI is projected to reach a new record."
+  },
+  {
+    "id": "2ad2e7e8cb4a",
+    "source": "Kitco (Reuters)",
+    "publishedAt": "2026-09-18T12:00:00.000Z",
+    "title": "Wall St Week Ahead: Investors focus on rate path, AI slowdown after Fed hike",
+    "snippet": "The Federal Reserve raised its target range by 25 basis points to 3.75%-4.00%, its first hike since 2023, and 16 of 18 officials project at least one more increase this year."
+  },
+  {
+    "id": "c302377cbf94",
+    "source": "Invezz",
+    "publishedAt": "2026-09-15T12:00:00.000Z",
+    "title": "US yields just hit a 19-year high: these 5 stocks could take the biggest hit",
+    "snippet": "The 10-year Treasury yield briefly hit 5%, peaking near 5.01%, its highest level since 2007, adding pressure on growth and AI stocks."
+  },
+  {
+    "id": "3ffdfa93e5c7",
+    "source": "Oracle (comunicado)",
+    "publishedAt": "2026-09-10T12:00:00.000Z",
+    "title": "Oracle Announces Q1 Results Driven by Triple Digit Growth in Cloud Infrastructure Revenues",
+    "snippet": "Revenue rose about 30% to $19.3 billion and remaining performance obligations reached about $664 billion. Capital expenditure was $28 billion, leaving free cash flow negative by about $5 billion, and Oracle completed a $20 billion at-the-market stock sale."
+  },
+  {
+    "id": "0fcb6f2d035f",
+    "source": "LetsDataScience",
+    "publishedAt": "2026-09-09T12:00:00.000Z",
+    "title": "Amazon raises GBP4.25 billion in debut sterling bond sale",
+    "snippet": "Amazon raised GBP4.25 billion in its first sterling bond sale on September 9, with final orders above GBP10.65 billion, as hyperscalers keep tapping debt markets to fund AI build-outs."
+  },
+  {
+    "id": "9952e7692f15",
+    "source": "SiliconANGLE",
+    "publishedAt": "2026-08-27T12:00:00.000Z",
+    "title": "Marvell's stock sinks despite earnings beat and strong guidance",
+    "snippet": "Marvell raised its fiscal 2027 revenue outlook to $12 billion and fiscal 2028 to $18 billion, but shares fell more than 7% after hours as investors, after a rally of more than 40% since late July, wanted more upside."
+  },
+  {
+    "id": "b7a359f1a9a7",
+    "source": "Invezz",
+    "publishedAt": "2026-08-26T12:00:00.000Z",
+    "title": "Nvidia stock slips 1% despite beating earnings expectations and raising guidance",
+    "snippet": "Nvidia's fiscal second-quarter revenue was $96.2 billion, up 106% year over year versus $92.3 billion expected. Data Center revenue hit a record $89.0 billion. It guided third-quarter revenue to $108 billion, assuming no China data center compute revenue."
+  },
+  {
+    "id": "2dfe4b3ce851",
+    "source": "HPCwire",
+    "publishedAt": "2026-08-26T12:00:00.000Z",
+    "title": "Are AI data center bans going too far?",
+    "snippet": "Opposition to data centers over electricity costs is spreading, with New York reportedly imposing a statewide moratorium on new construction in mid-July and Virginia weighing repeal of its tax break."
+  },
+  {
+    "id": "bad2500b0e52",
+    "source": "StartupHub.ai",
+    "publishedAt": "2026-08-24T12:00:00.000Z",
+    "title": "Micron and MongoDB Sink as AI Chip Complex Buckles Before Nvidia Earnings, SOXX -2.67%",
+    "snippet": "AI chip stocks tumbled Monday ahead of Nvidia's earnings, with the semiconductor index down 2.67%."
+  },
+  {
+    "id": "5de56a056464",
+    "source": "SentiSense",
+    "publishedAt": "2026-08-19T12:00:00.000Z",
+    "title": "AI Stock Sell-off Triggers Global Share Declines as Markets Eye Middle East Tensions",
+    "snippet": "Global equity markets fell on August 19 as heavy selling hit AI-related stocks. The S&P 500 dropped about 0.7% with semiconductors weak."
+  },
+  {
+    "id": "7ac5ce81094e",
+    "source": "Channel Insider",
+    "publishedAt": "2026-08-17T12:00:00.000Z",
+    "title": "Anthropic Widens Lead Over OpenAI as Revenue Run Rate Hits $65 Billion",
+    "snippet": "Bloomberg reported Anthropic's annualized revenue run rate reached about $65 billion at the end of July, up from about $47 billion in late May, while OpenAI's comparable figure was above $40 billion. The companies may calculate run rate differently."
+  },
+  {
+    "id": "2f26450c3159",
+    "source": "CoreWeave (comunicado)",
+    "publishedAt": "2026-08-11T12:00:00.000Z",
+    "title": "CoreWeave Reports Strong Second Quarter 2026 Results",
+    "snippet": "Revenue was about $2.6 billion, up 112%. Net loss was $626 million with $640 million of interest expense. Q2 capex was $9.4 billion and full-year capex guidance rose to $35-39 billion. Backlog was about $104 billion."
+  },
+  {
+    "id": "6fd0df65abc2",
+    "source": "Fortune",
+    "publishedAt": "2026-08-06T12:00:00.000Z",
+    "title": "SoftBank earnings beat on Intel gain while OpenAI stake is flat",
+    "snippet": "SoftBank's April-June net profit fell about 18% to 347.3 billion yen. Its OpenAI stake produced no gain or loss, versus about $20 billion of appreciation the prior quarter. It plans another $10 billion for OpenAI in October, and Vision Fund 2 reportedly plans to borrow $10 billi…"
+  },
+  {
+    "id": "cd0c7a27f7b5",
+    "source": "XTB",
+    "publishedAt": "2026-08-04T12:00:00.000Z",
+    "title": "Palantir earnings: high expectations and even bigger gains",
+    "snippet": "Palantir reported second-quarter revenue up 93% year over year to $1.94 billion, with adjusted EPS up 156% and full-year revenue guidance raised."
+  },
+  {
+    "id": "29c0318af657",
+    "source": "Invezz",
+    "publishedAt": "2026-07-25T12:00:00.000Z",
+    "title": "Why are Nvidia-backed CoreWeave, Nebius and IREN stocks plunging?",
+    "snippet": "Top neocloud stocks fell sharply over recent days as concerns about the industry's outlook intensified, citing rising server, memory and chip costs and new competition. IREN is down 47% from its peak this year; short interest is 27% for CoreWeave, 28% for Nebius and 22% for IREN."
+  }
+]

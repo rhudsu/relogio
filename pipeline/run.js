@@ -11,6 +11,7 @@ import {
   mergeLedger,
   toArticle,
 } from "./services/ledgerService.js";
+import { createArticle } from "./services/articleService.js";
 import { buildClockData, buildEntries } from "./services/publicationService.js";
 import { EVIDENCE_LEVELS } from "./services/scoreService.js";
 import { resolveWeeklySummary } from "./services/summaryService.js";
@@ -19,7 +20,8 @@ import { normalizeTitle } from "./utils/text.js";
 function selectNewArticles({ collected, ledger, sources, settings, now }) {
   const isRelevant = createRelevanceFilter(sources);
   const recent = filterRecent(collected, now, settings.collection.lookbackDays);
-  const relevant = recent.filter(isRelevant);
+  // Artigos manuais já foram escolhidos por quem pesquisou: não passam pelo filtro de palavras-chave.
+  const relevant = recent.filter((article) => article.origin === "manual" || isRelevant(article));
   const knownIds = new Set(ledger.map((entry) => entry.id));
   const knownTitles = new Set(ledger.map((entry) => normalizeTitle(entry.title)));
   const fresh = removeDuplicates(newestFirst(relevant), knownIds, knownTitles);
@@ -71,6 +73,11 @@ export async function runPipeline({
     fetchFn,
     sleep,
   });
+
+  const extraArticles = ((await repository.readExtraArticles?.()) ?? [])
+    .map((item) => createArticle({ ...item, origin: "manual" }))
+    .filter(Boolean);
+  collected.push(...extraArticles);
 
   failures.forEach(({ source, reason }) => logger.warn(`Fonte ${source} falhou: ${reason}`));
   if (failures.length >= sourceCount) throw new Error("Nenhuma fonte respondeu. Nada foi alterado.");

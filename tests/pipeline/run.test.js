@@ -370,3 +370,51 @@ describe("runPipeline com resumo da semana", () => {
     assert.ok(warnings.some((message) => /501 caracteres/.test(message)));
   });
 });
+
+describe("runPipeline com artigos pesquisados (fonte manual)", () => {
+  let directory;
+  let repository;
+  const seen = [];
+  const recorder = {
+    classify: async (articles) => {
+      seen.push(...articles);
+      return { results: [], errors: [], failedBatches: 0, tokens: { input: 0, output: 0 } };
+    },
+  };
+
+  before(async () => {
+    const { writeFile } = await import("node:fs/promises");
+    directory = await mkdtemp(join(tmpdir(), "relogio-manual-"));
+    await writeFile(
+      join(directory, "extra-articles.json"),
+      JSON.stringify([
+        { url: "https://example.com/fed", title: "Fed raises rates", source: "Exemplo", publishedAt: "2026-10-20T12:00:00Z", snippet: "Hike." },
+        { url: "https://example.com/velha", title: "Velha demais", source: "Exemplo", publishedAt: "2026-01-01T12:00:00Z" },
+      ]),
+    );
+    repository = createDataRepository({
+      ledgerPath: join(directory, "ledger.json"),
+      clockPath: join(directory, "clock.json"),
+      entriesPath: join(directory, "entries.json"),
+      extraArticlesPath: join(directory, "extra-articles.json"),
+    });
+  });
+
+  after(() => rm(directory, { recursive: true, force: true }));
+
+  it("inclui o artigo manual dentro do período mesmo sem palavra-chave de IA e ignora o fora do período", async () => {
+    await runPipeline({
+      now: NOW,
+      config: CONFIG,
+      fetchFn: async () => new Response(feedXml(), { status: 200 }),
+      sleep: async () => {},
+      repository,
+      logger: { info() {}, warn() {} },
+      classifier: recorder,
+      dryRun: false,
+    });
+
+    assert.ok(seen.some((article) => article.title === "Fed raises rates" && article.origin === "manual"));
+    assert.ok(!seen.some((article) => article.title === "Velha demais"));
+  });
+});

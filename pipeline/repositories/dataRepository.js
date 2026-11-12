@@ -27,6 +27,7 @@ export function createDataRepository({
   candidatesPath,
   classificationsPath,
   summaryPath,
+  extraArticlesPath,
 }) {
   return {
     async readLedger() {
@@ -41,6 +42,12 @@ export function createDataRepository({
     async writePublicData({ clock, entries }) {
       await writeJsonAtomically(entriesPath, entries);
       await writeJsonAtomically(clockPath, clock);
+    },
+
+    // Artigos pesquisados fora do RSS/GDELT (ex.: retrospectiva histórica). Arquivo opcional.
+    async readExtraArticles() {
+      const extra = extraArticlesPath ? await readJsonIfExists(extraArticlesPath) : null;
+      return Array.isArray(extra) ? extra : [];
     },
 
     async readWeeklySummary() {

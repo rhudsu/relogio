@@ -6,6 +6,7 @@ import { createGeminiClient, describeAuth, resolveGeminiAuth } from "./providers
 import { createGeminiProvider } from "./providers/geminiProvider.js";
 import { createDataRepository } from "./repositories/dataRepository.js";
 import { buildSystemPrompt, createClassifier } from "./services/classifierService.js";
+import { applyBackfill } from "./services/backfillService.js";
 import { createFileClassifier } from "./services/fileClassifierService.js";
 import { runPipeline } from "./run.js";
 import { sleep } from "./utils/http.js";
@@ -97,7 +98,10 @@ async function main() {
   const dryRun = flags.has("--dry-run") || exportCandidates;
   const useFileClassifier = flags.has("--classifier=file");
   const reclassify = flags.has("--reclassify");
-  const config = await loadConfig();
+  const backfillFrom = process.argv.slice(2).find((arg) => arg.startsWith("--backfill-from="))?.split("=")[1];
+  const loaded = await loadConfig();
+  const now = new Date();
+  const config = backfillFrom ? { ...loaded, settings: applyBackfill(loaded.settings, backfillFrom, now, { gdelt: flags.has("--backfill-gdelt") }) } : loaded;
 
   const repository = createDataRepository({
     ledgerPath: projectPath("./state/ledger.json"),
@@ -106,6 +110,7 @@ async function main() {
     candidatesPath: projectPath("./state/candidates.json"),
     classificationsPath: projectPath("./state/classifications.json"),
     summaryPath: projectPath("./state/weekly-summary.json"),
+    extraArticlesPath: projectPath("./state/extra-articles.json"),
   });
 
   let classifier = null;
@@ -114,7 +119,7 @@ async function main() {
   }
 
   const result = await runPipeline({
-    now: new Date(),
+    now,
     config,
     fetchFn: fetch,
     sleep,
